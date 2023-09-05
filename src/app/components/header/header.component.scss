@@ -1,0 +1,32 @@
+.mat-toolbar {
+  color: #1D1D26;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  z-index: 10;
+}
+
+.flex-left {
+  display: flex;
+  align-items: center;
+}
+
+.flex-right {
+  display: flex;
+  align-items: center;
+
+  button {
+    padding: 0 1.5rem;
+    background: none;
+  }
+}
+
+button:hover {
+  color: #B3B3B3;
+  background-color: none;
+}
+
+.mat-mdc-button,
+.mat-mdc-outlined-button {
+  --mat-mdc-button-persistent-ripple-color: none;
+}
