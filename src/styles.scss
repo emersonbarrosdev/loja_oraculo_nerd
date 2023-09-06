@@ -3,6 +3,10 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
   background: #1D1D26;
+  overflow-wrap: break-word;
+}
+
+@font-face {
+  src: url('./assets/fonts/ttf/CascadiaCode.ttf') format('ttf');
 }

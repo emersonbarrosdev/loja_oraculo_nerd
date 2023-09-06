@@ -1,13 +1,21 @@
 <mat-toolbar color="primary">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <a routerLink="/">
+        <div mat-card-avatar class="example-header-image"></div>
+      </a>
+    </mat-card-header>
     <div class="flex-left">
-      <button mat-button routerLink="/">emerson barros dev</button>
+      <button mat-button routerLink="/">emerson barros</button>
     </div>
-    <div>
-    </div>
-    <div class="flex-right">
-      <button mat-button routerLink="/">home</button>
-      <button mat-button routerLink="/projetos">projetos</button>
-      <button mat-button routerLink="/sobre">sobre</button>
-      <button mat-button routerLink="/contato">contato</button>
-    </div>
+  </mat-card>
+
+  <div>
+  </div>
+  <div class="flex-right">
+    <button mat-button routerLink="/" [class.active-button]="isButtonActive('/home')">home</button>
+    <button mat-button routerLink="/project" [class.active-button]="isButtonActive('/project')">projetos</button>
+    <button mat-button routerLink="/about" [class.active-button]="isButtonActive('/about')">sobre</button>
+    <button mat-button routerLink="/contact" [class.active-button]="isButtonActive('/contact')">contato</button>
+  </div>
 </mat-toolbar>

@@ -4,11 +4,42 @@
   justify-content: space-around;
   background: #fff;
   z-index: 10;
+  position: fixed;
+  width: 100%;
+}
+
+.example-card {
+  background: none;
+  box-shadow: none;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  transition: 0.5s ease;
+}
+
+.example-card:hover {
+  transform: scale(1.1);
+}
+
+.example-header-image {
+  background-image: url('../../../assets/img/perfil.png');
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+}
+
+mat-card-header {
+  padding-right: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .flex-left {
   display: flex;
   align-items: center;
+
+  button:first-child {
+    padding: 0 0 0 0.7rem;
+  }
 }
 
 .flex-right {
@@ -16,9 +47,20 @@
   align-items: center;
 
   button {
-    padding: 0 1.5rem;
-    background: none;
+    transition: 0.5s ease;
   }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+}
+
+button {
+  font-family: 'Cascadia Code', sans-serif;
+  font-size: 1rem;
+  padding: 0 1.5rem;
+  background: none;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
@@ -26,7 +68,13 @@ button:hover {
   background-color: none;
 }
 
+.active-button {
+  text-transform: capitalize;
+}
+
 .mat-mdc-button,
 .mat-mdc-outlined-button {
   --mat-mdc-button-persistent-ripple-color: none;
+  --mat-mdc-button-ripple-color: none;
 }
+
