@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { PortfolioService } from '../service/portfolio.service';
 
 @Component({
   selector: 'app-project',
@@ -7,4 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent {
+
+  private service = inject(PortfolioService);
+
+  getProjetc() {
+    this.service.getProjects().subscribe(
+      project => console.log(project)
+    );
+  }
 }
