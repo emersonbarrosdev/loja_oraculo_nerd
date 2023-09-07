@@ -1,0 +1,10 @@
+{
+  "project": [
+    {
+      "image": "./img/bookhunter.png",
+      "title": "Book Hunter",
+      "description": "É uma aplicação que usa a API do Google Books para buscas, utilizando o padrão Observer e a biblioteca RxJS.",
+      "technology": "angular | typescript | material | bootstrap"
+    }
+  ]
+}

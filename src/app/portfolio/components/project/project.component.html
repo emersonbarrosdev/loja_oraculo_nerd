@@ -1,0 +1,5 @@
+<main *ngIf="projectData.length > 0">
+  <div *ngFor="let project of projectData">
+      <app-project-card [project]="project"></app-project-card>
+  </div>
+</main>

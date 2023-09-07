@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { ProjectComponent } from './components/project/project.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { AboutComponent } from './components/about/about.component';
+import { RouterModule, Routes } from '@angular/router';import { AboutComponent } from './portfolio/components/about/about.component';
+import { ContactComponent } from './portfolio/components/contact/contact.component';
+import { HomeComponent } from './portfolio/components/home/home.component';
+import { ProjectComponent } from './portfolio/components/project/project.component';
+import { ProjectCardComponent } from './portfolio/components/project-card/project-card.component';
+;
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  } ,
+  {
+    path: 'project-card',
+    component: ProjectCardComponent
   }
 ];
 
