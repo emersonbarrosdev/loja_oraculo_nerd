@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
 
 @Component({
@@ -8,6 +8,6 @@ import { Project } from '../../models/project';
 })
 export class ProjectCardComponent {
 
+  imageUrl: string;
   @Input() project: Project;
-
 }

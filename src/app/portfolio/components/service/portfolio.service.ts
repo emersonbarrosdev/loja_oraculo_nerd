@@ -9,7 +9,8 @@ import { Project } from '../../models/project';
 export class PortfolioService {
 
 
-  private readonly backendApi = "https://backend-portfolio-git-main-emersonbarrosdev.vercel.app/project";
+  private readonly backendApi = "https://backend-portfolio-fawn.vercel.app/project";
+  // private readonly backendApi = "http://localhost:3000/project";
 
   private http = inject(HttpClient)
 

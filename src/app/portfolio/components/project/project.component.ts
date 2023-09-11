@@ -9,18 +9,12 @@ import { Project } from '../../models/project';
 })
 export class ProjectComponent implements OnInit {
 
+
   public projectData: Project[] = [];
   private service = inject(PortfolioService);
 
   ngOnInit(): void {
-    this.service.getProjects().subscribe({
-      next: (resp) => {
-        if (resp) {
-          this.projectData = resp;
-        }
-      },
-      error: err => console.error(err),
-    });
+    this.getProject();
   }
 
   getProject() {

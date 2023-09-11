@@ -30,7 +30,6 @@ img {
 
 img:hover {
   transform: scale(1.2);
-
 }
 
 .information {
@@ -44,7 +43,7 @@ img:hover {
   justify-content: flex-end;
   align-items: center;
   border-radius: 3px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 80%);
 }
 
 mat-card-title {
@@ -57,10 +56,18 @@ mat-card-title {
 
 p {
   text-align: center;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: 0.2rem 0.1rem;
+}
+
+.technology {
+  text-align: center;
   font-size: 0.6rem;
   line-height: 1rem;
   margin: 0;
-  padding: 0.3rem 0.1rem;
+  padding: 0.2rem 0.1rem;
 }
 
 mat-card-actions {
@@ -84,13 +91,13 @@ button:hover {
   background: #a0a0a0;
 }
 
-button:last-child {
+a .last {
   color: #fff;
   background: #1D1D26;
   transition: 0.5s ease;
 }
 
-button:last-child:hover {
+a .last:hover {
   color: #fff;
   background: #4d4d55;
 }

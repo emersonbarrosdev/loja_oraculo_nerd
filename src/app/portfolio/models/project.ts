@@ -3,4 +3,6 @@ export class Project {
   title?: string;
   description?: string;
   technology?: string;
+  projectLink?: string;
+  githubLink?: string;
 }

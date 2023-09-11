@@ -1,3 +1,7 @@
+main {
+  width: 100%;
+}
+
 .mat-toolbar {
   color: #1D1D26;
   display: flex;
@@ -5,7 +9,6 @@
   background: #fff;
   z-index: 10;
   position: fixed;
-  width: 100%;
 }
 
 .example-card {
@@ -22,7 +25,7 @@
 }
 
 .example-header-image {
-  background-image: url('../../../assets/img/perfil.png');
+  background-image: url('../../../../assets/img/perfil.png');
   background-size: cover;
   height: 40px;
   width: 40px;
@@ -45,14 +48,6 @@ mat-card-header {
 .flex-right {
   display: flex;
   align-items: center;
-
-  button {
-    transition: 0.5s ease;
-  }
-
-  button:hover {
-    transform: scale(1.1);
-  }
 }
 
 button {
@@ -69,7 +64,9 @@ button:hover {
 }
 
 .active-button {
-  text-transform: capitalize;
+  background: #fff;
+  height: 84px;
+  border-radius: 0;
 }
 
 .mat-mdc-button,
