@@ -5,10 +5,44 @@ main {
 .mat-toolbar {
   color: #1D1D26;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background: #fff;
   z-index: 10;
   position: fixed;
+  height: 64px;
+}
+
+mat-card-header {
+  padding: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  .brand{
+    font-family: 'Cascadia Code', sans-serif;
+    font-size: 1rem;
+    display: flex;
+    text-decoration: none;
+    color: #1D1D26;
+    align-items: center;
+    padding-right: 3rem;
+    transition: 0.5s ease;
+
+    span{
+      padding-left: 10px;
+    }
+
+    span:hover {
+      color: #B3B3B3;
+    }
+  }
+
+  .brand:hover {
+    transform: scale(1.1);
+  }
+
+}
+
+.mat-mdc-card-avatar {
+  margin: 0;
 }
 
 .example-card {
@@ -17,11 +51,6 @@ main {
   align-items: center;
   display: flex;
   flex-direction: row;
-  transition: 0.5s ease;
-}
-
-.example-card:hover {
-  transform: scale(1.1);
 }
 
 .example-header-image {
@@ -29,11 +58,6 @@ main {
   background-size: cover;
   height: 40px;
   width: 40px;
-}
-
-mat-card-header {
-  padding-right: 0;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .flex-left {
@@ -73,5 +97,19 @@ button:hover {
 .mat-mdc-outlined-button {
   --mat-mdc-button-persistent-ripple-color: none;
   --mat-mdc-button-ripple-color: none;
+}
+
+@media (max-width: 800px) {
+  .mat-mdc-card-avatar {
+   display: none;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .mat-mdc-card-avatar {
+   display: block;
+  }
+
 }
 

@@ -15,6 +15,7 @@ import { HeaderComponent } from './portfolio/components/header/header.component'
 import { HomeComponent } from './portfolio/components/home/home.component';
 import { ProjectComponent } from './portfolio/components/project/project.component';
 import { ProjectCardComponent } from './portfolio/components/project-card/project-card.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ProjectCardComponent } from './portfolio/components/project-card/projec
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

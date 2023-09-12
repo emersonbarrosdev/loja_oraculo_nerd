@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   background: #1D1D26;
@@ -9,4 +13,19 @@ body {
 
 @font-face {
   src: url('./assets/fonts/ttf/CascadiaCode.ttf') format('ttf');
+}
+
+.mat-mdc-menu-content,
+.mat-mdc-menu-content
+.mat-mdc-menu-item
+.mat-mdc-menu-item-text {
+  color: #1D1D26 !important;
+  font-family: 'Cascadia Code', sans-serif !important;
+  font-size: 1rem !important;
+
+  .active-button {
+    background: #f1f1f1 !important;
+    height: 0 !important;
+    border-radius: 0 !important;
+  }
 }

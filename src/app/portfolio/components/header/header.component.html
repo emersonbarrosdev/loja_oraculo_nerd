@@ -2,23 +2,28 @@
   <mat-toolbar color="primary">
     <mat-card class="example-card">
       <mat-card-header>
-        <a routerLink="/">
+        <a class="brand" routerLink="/">
           <div mat-card-avatar class="example-header-image"></div>
+          <span>emerson barros</span>
         </a>
       </mat-card-header>
-      <div class="flex-left">
-        <button mat-button routerLink="/">emerson barros</button>
+
+      <div *ngIf="!isMobile" class="flex-right">
+        <button mat-button routerLink="/" [class.active-button]="isButtonActive('/home')">home</button>
+        <button mat-button routerLink="/project" [class.active-button]="isButtonActive('/project')">projetos</button>
+        <button mat-button routerLink="/about" [class.active-button]="isButtonActive('/about')">sobre</button>
+        <button mat-button routerLink="/contact" [class.active-button]="isButtonActive('/contact')">contato</button>
+      </div>
+
+      <div *ngIf="isMobile">
+        <button mat-button [matMenuTriggerFor]="menu">menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/" [class.active-button]="isButtonActive('/home')">home</button>
+          <button mat-menu-item routerLink="/project" [class.active-button]="isButtonActive('/project')">projetos</button>
+          <button mat-menu-item routerLink="/about" [class.active-button]="isButtonActive('/about')">sobre</button>
+          <button mat-menu-item routerLink="/contact" [class.active-button]="isButtonActive('/contact')">contato</button>
+        </mat-menu>
       </div>
     </mat-card>
-
-    <div>
-    </div>
-    <div class="flex-right">
-      <button mat-button routerLink="/" [class.active-button]="isButtonActive('/home')">home</button>
-      <button mat-button routerLink="/project" [class.active-button]="isButtonActive('/project')">projetos</button>
-      <button mat-button routerLink="/about" [class.active-button]="isButtonActive('/about')">sobre</button>
-      <button mat-button routerLink="/contact" [class.active-button]="isButtonActive('/contact')">contato</button>
-    </div>
   </mat-toolbar>
-
 </main>
