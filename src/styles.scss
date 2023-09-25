@@ -1,12 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 html,
 body {
+  width: 100%;
   height: 100%;
 }
 
 body {
-  margin: 0;
   background: #1D1D26;
   overflow-wrap: break-word;
 }
@@ -28,4 +32,9 @@ body {
     height: 0 !important;
     border-radius: 0 !important;
   }
+}
+
+.mat-mdc-form-field-infix {
+  min-width: 120px !important;
+  width: 500px !important;
 }

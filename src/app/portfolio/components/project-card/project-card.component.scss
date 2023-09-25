@@ -51,7 +51,9 @@ mat-card-title {
   font-weight: bold;
   font-family: 'Cascadia Code', sans-serif;
   margin: 0;
-  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 7px 7px rgba(0, 0, 0, 0.8);
+  color: #FFEBBF;
+  text-transform: uppercase;
 }
 
 p {

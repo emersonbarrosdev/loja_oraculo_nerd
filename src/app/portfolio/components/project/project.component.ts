@@ -9,7 +9,7 @@ import { Project } from '../../models/project';
 })
 export class ProjectComponent implements OnInit {
 
-
+  showLoading: boolean;
   public projectData: Project[] = [];
   private service = inject(PortfolioService);
 
@@ -18,14 +18,21 @@ export class ProjectComponent implements OnInit {
   }
 
   getProject() {
-    this.service.getProjects().subscribe({
-      next: (resp) => {
-        if (resp) {
-          this.projectData = resp;
-        }
-      },
-      error: err => console.error(err),
-    });
+    this.showLoading = true;
+    setTimeout(() => {
+      this.service.getProjects().subscribe({
+        next: (resp) => {
+          if (resp) {
+            this.showLoading = false;
+            this.projectData = resp;
+          }
+        },
+        error: err => {
+          this.showLoading = false;
+          console.error(err)
+        },
+      });
+    }, 1000);
   }
 
 }

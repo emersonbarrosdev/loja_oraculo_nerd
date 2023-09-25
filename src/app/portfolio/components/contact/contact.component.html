@@ -1,3 +1,23 @@
-<div class="container">
-  <p>contact works!</p>
-</div>
+<main *ngIf="form">
+  <div class="example-container">
+    <form [formGroup]="form">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        <mat-error *ngIf="form.get('email').invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+      <mat-card-actions>
+        <button routerLink="" mat-button>ENVIAR</button>
+      </mat-card-actions>
+    </form>
+  </div>
+
+</main>

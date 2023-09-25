@@ -16,6 +16,11 @@ import { HomeComponent } from './portfolio/components/home/home.component';
 import { ProjectComponent } from './portfolio/components/project/project.component';
 import { ProjectCardComponent } from './portfolio/components/project-card/project-card.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { PositionCardDirective } from './portfolio/directive/position-card.directive';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,17 +31,23 @@ import {MatMenuModule} from '@angular/material/menu';
     AboutComponent,
     ContactComponent,
     ProjectCardComponent,
+    PositionCardDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CommonModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
-    HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,10 @@
-<main *ngIf="projectData.length > 0">
-  <div *ngFor="let project of projectData">
+<div class="loading-container" *ngIf="showLoading; else projetc">
+  <div class="loading-spinner"></div>
+</div>
+<ng-template #projetc>
+  <main *ngIf="projectData.length > 0">
+    <div *ngFor="let project of projectData">
       <app-project-card [project]="project"></app-project-card>
-  </div>
-</main>
+    </div>
+  </main>
+</ng-template>
