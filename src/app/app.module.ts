@@ -10,8 +10,6 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './portfolio/components/about/about.component';
-import { ContactComponent } from './portfolio/components/contact/contact.component';
-import { HeaderComponent } from './portfolio/components/header/header.component';
 import { HomeComponent } from './portfolio/components/home/home.component';
 import { ProjectComponent } from './portfolio/components/project/project.component';
 import { ProjectCardComponent } from './portfolio/components/project-card/project-card.component';
@@ -21,17 +19,17 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
+import { ScrollButtonComponent } from './portfolio/components/scroll-button/scroll-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     ProjectComponent,
     AboutComponent,
-    ContactComponent,
     ProjectCardComponent,
     PositionCardDirective,
+    ScrollButtonComponent,
   ],
   imports: [
     BrowserModule,
