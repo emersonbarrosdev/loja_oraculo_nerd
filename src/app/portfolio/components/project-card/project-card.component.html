@@ -2,9 +2,20 @@
   <div class="image-container">
     <img mat-card-image [src]="project?.image" alt="04" />
     <div class="information">
-      <mat-card-title>{{ project?.title }}</mat-card-title>
+      <mat-card-title
+        [matTooltip]="project?.title.length > 25 ? project?.title : null"
+        [matTooltipPosition]="'above'"
+        >{{ project?.title | truncate : 25 }}</mat-card-title
+      >
       <mat-card-content>
-        <p>{{ project?.description | truncate:30 }}</p>
+        <p
+          [matTooltip]="
+            project?.description.length > 60 ? project?.description : null
+          "
+          [matTooltipPosition]="'above'"
+        >
+          {{ project?.description | truncate : 60 }}
+        </p>
       </mat-card-content>
       <mat-card-actions>
         <a href="{{ project?.link }}" target="_blank">

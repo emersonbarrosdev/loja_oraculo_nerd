@@ -1,18 +1,47 @@
-.home-container {
+.mat-toolbar {
   width: 100%;
-  background-color: #43007d;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.container {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  z-index: 1;
-  position: fixed;
-  top: 0;
 }
+
+.background-image {
+  height: 1rem;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar .mat-mdc-button-base.mat-mdc-button-base.mat-unthemed {
+  background-color: none !important;
+}
+
+.mat-mdc-button,
+.mat-mdc-outlined-button {
+  --mat-mdc-button-ripple-color: none;
+}
+
 
 p {
   color: #fff;
   font-size: 1.5rem;
   margin: 16px;
   font-weight: 600;
+}
+
+
+.no-underline {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.no-underline:hover {
+  color: #6222EE;
+  transform: scale(1.1);
 }

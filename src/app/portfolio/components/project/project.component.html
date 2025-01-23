@@ -1,14 +1,25 @@
 <div class="project">
-  <div class="loading-container" *ngIf="showLoading; else projetc">
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [formControl]="searchControl"
+      placeholder="Busque produto por título ou descrição"
+    />
+  </div>
+
+  <div class="loading-container" *ngIf="showLoading; else projectList">
     <div class="loading-spinner"></div>
   </div>
-  <ng-template #projetc>
-    <!-- <h1>PRODUTOS</h1> -->
-    <main *ngIf="projectData.length > 0">
-      <div class="tpotpo" *ngFor="let project of projectData">
+  <ng-template #projectList>
+    <main *ngIf="filteredProjectData.length > 0; else noResults">
+      <div class="tpotpo" *ngFor="let project of filteredProjectData">
         <app-project-card [project]="project"></app-project-card>
       </div>
     </main>
+    <ng-template #noResults>
+      <p class="no-results">Nenhum produto encontrado.</p>
+    </ng-template>
   </ng-template>
   <app-scroll-button></app-scroll-button>
 </div>

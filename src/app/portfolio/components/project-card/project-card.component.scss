@@ -1,6 +1,19 @@
+// .movie-card {
+//   width: 300px;
+//   height: 440px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border: 1px solid #797979;
+//   position: relative;
+//   box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.7);
+//   background: #000000;
+//   overflow: hidden;
+// }
+
 .movie-card {
-  width: 300px;
-  height: 440px;
+  width: 255px; /* 300px reduzido em 15% */
+  height: 374px; /* 440px reduzido em 15% */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,6 +23,7 @@
   background: #000000;
   overflow: hidden;
 }
+
 
 .image-container {
   position: relative;
@@ -42,13 +56,13 @@ img:hover {
   justify-content: flex-end;
   align-items: center;
   border-radius: 3px;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 80%);
+  background: linear-gradient(to bottom, transparent 0%, #000000 80%);
 }
 
 mat-card-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
-  margin: 0;
+  margin: 0 16px;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.87);
   color: #fff;
   text-align: center;
@@ -56,7 +70,7 @@ mat-card-title {
 
 p {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1rem;
   margin: 0;
   padding: 0.2rem 0.1rem;

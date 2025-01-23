@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +19,7 @@ import { ProjectComponent } from './portfolio/components/project/project.compone
 import { ScrollButtonComponent } from './portfolio/components/scroll-button/scroll-button.component';
 import { PositionCardDirective } from './portfolio/directive/position-card.directive';
 import { TruncatePipe } from './portfolio/components/project-card/truncate.pipe';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,9 @@ import { TruncatePipe } from './portfolio/components/project-card/truncate.pipe'
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
