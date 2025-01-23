@@ -1,20 +1,14 @@
 <mat-card class="movie-card">
   <div class="image-container">
-    <img mat-card-image
-      src="{{ project?.image }}"
-      alt="Título do Filme">
+    <img mat-card-image [src]="project?.image" alt="04" />
     <div class="information">
       <mat-card-title>{{ project?.title }}</mat-card-title>
       <mat-card-content>
         <p>{{ project?.description }}</p>
-        <div class="technology">{{ project?.technology }}</div>
       </mat-card-content>
       <mat-card-actions>
-        <a href="{{ project?.projectLink }}" target="_blank">
-          <button mat-button>PROJETO</button>
-        </a>
-        <a href="{{ project?.githubLink }}" target="_blank">
-          <button class="last" mat-button>GITHUB</button>
+        <a href="{{ project?.link }}" target="_blank">
+          <button mat-button>COMPRAR</button>
         </a>
       </mat-card-actions>
     </div>

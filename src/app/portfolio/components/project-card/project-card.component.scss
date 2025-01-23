@@ -4,11 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #336699;
+  border: 1px solid #797979;
   position: relative;
-  font-family: 'Cascadia Code', sans-serif;
   box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.7);
-  background: #2C2C3E;
+  background: #000000;
   overflow: hidden;
 }
 
@@ -49,11 +48,10 @@ img:hover {
 mat-card-title {
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Cascadia Code', sans-serif;
   margin: 0;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.87);
   color: #fff;
-  text-transform: uppercase;
+  text-align: center;
 }
 
 p {
@@ -82,25 +80,15 @@ mat-card-actions {
 
 button {
   width: 120px;
-  background: #336699;
+  background: #f6c31e;
   border-radius: 0;
   margin: 0 0.5rem;
   margin-bottom: 0.5rem;
   transition: 0.5s ease;
-  color: #fff !important;
+  color: #202020 !important;
 }
 
 button:hover {
-  background: #4b94dd;
-}
-
-a .last {
-  color: #fff;
-  background: #2C2C3E;
-  transition: 0.5s ease;
-}
-
-a .last:hover {
-  color: #fff;
-  background: #6a6a92;
+  background: #d52a2a;
+  color: #fff !important;
 }

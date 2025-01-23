@@ -1,32 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {MatCardModule} from '@angular/material/card';
-import { HttpClientModule } from '@angular/common/http';
-import { AboutComponent } from './portfolio/components/about/about.component';
 import { HomeComponent } from './portfolio/components/home/home.component';
-import { ProjectComponent } from './portfolio/components/project/project.component';
 import { ProjectCardComponent } from './portfolio/components/project-card/project-card.component';
-import {MatMenuModule} from '@angular/material/menu';
-import { PositionCardDirective } from './portfolio/directive/position-card.directive';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { CommonModule } from '@angular/common';
+import { ProjectComponent } from './portfolio/components/project/project.component';
 import { ScrollButtonComponent } from './portfolio/components/scroll-button/scroll-button.component';
+import { PositionCardDirective } from './portfolio/directive/position-card.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProjectComponent,
-    AboutComponent,
     ProjectCardComponent,
     PositionCardDirective,
     ScrollButtonComponent,

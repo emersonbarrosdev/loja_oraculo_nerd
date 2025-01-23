@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';import { AboutComponent } from './portfolio/components/about/about.component';
 import { HomeComponent } from './portfolio/components/home/home.component';
 import { ProjectComponent } from './portfolio/components/project/project.component';
 import { ProjectCardComponent } from './portfolio/components/project-card/project-card.component';
+import { RouterModule, Routes } from '@angular/router';
 ;
 
 const routes: Routes = [
@@ -18,10 +18,6 @@ const routes: Routes = [
   {
     path: 'project',
     component: ProjectComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
   },
   {
     path: 'project-card',

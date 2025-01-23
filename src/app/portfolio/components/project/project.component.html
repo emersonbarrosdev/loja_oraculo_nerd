@@ -3,12 +3,12 @@
     <div class="loading-spinner"></div>
   </div>
   <ng-template #projetc>
-      <h1>Projetos</h1>
+    <!-- <h1>PRODUTOS</h1> -->
     <main *ngIf="projectData.length > 0">
-      <div *ngFor="let project of projectData">
+      <div class="tpotpo" *ngFor="let project of projectData">
         <app-project-card [project]="project"></app-project-card>
       </div>
     </main>
   </ng-template>
-
+  <app-scroll-button></app-scroll-button>
 </div>
