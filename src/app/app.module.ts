@@ -19,6 +19,7 @@ import { ProjectCardComponent } from './portfolio/components/project-card/projec
 import { ProjectComponent } from './portfolio/components/project/project.component';
 import { ScrollButtonComponent } from './portfolio/components/scroll-button/scroll-button.component';
 import { PositionCardDirective } from './portfolio/directive/position-card.directive';
+import { TruncatePipe } from './portfolio/components/project-card/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PositionCardDirective } from './portfolio/directive/position-card.direc
     ProjectCardComponent,
     PositionCardDirective,
     ScrollButtonComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,

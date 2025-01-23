@@ -4,7 +4,7 @@
     <div class="information">
       <mat-card-title>{{ project?.title }}</mat-card-title>
       <mat-card-content>
-        <p>{{ project?.description }}</p>
+        <p>{{ project?.description | truncate:30 }}</p>
       </mat-card-content>
       <mat-card-actions>
         <a href="{{ project?.link }}" target="_blank">
