@@ -20,6 +20,10 @@ import { ScrollButtonComponent } from './portfolio/components/scroll-button/scro
 import { PositionCardDirective } from './portfolio/directive/position-card.directive';
 import { TruncatePipe } from './portfolio/components/project-card/truncate.pipe';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EbookModalComponent } from './portfolio/components/ebook-modal/ebook-modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     PositionCardDirective,
     ScrollButtonComponent,
     TruncatePipe,
+    EbookModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     FormsModule,
     MatInputModule,
     MatTooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

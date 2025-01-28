@@ -38,11 +38,15 @@
       </a>
     </button>
     <span class="example-spacer"></span>
-    <button mat-button class="example-button-row me-4 no-underline">
-      <a href="" target="_blank" rel="noopener noreferrer" class="no-underline">
-        E-book Grátis em Breve!
-      </a>
+    <button mat-raised-button class="example-button-row me-4 no-underline" (click)="startDownload(loadingSpinner)">
+      Baixar E-book
     </button>
+
+    <ng-template #loadingSpinner>
+      <div class="overlay">
+        <mat-spinner diameter="200"></mat-spinner>
+      </div>
+    </ng-template>
     <button mat-button class="example-button-row me-4 no-underline">
       <a
         href="http://hotm.art/sRe0Uqy"

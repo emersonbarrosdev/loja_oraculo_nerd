@@ -1,0 +1,26 @@
+<div class="modal-container">
+  <button mat-icon-button class="close-btn" (click)="closeModal()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div class="modal-content">
+    <!-- Coluna da imagem -->
+    <div class="image-container">
+      <img src="assets/ebook.png" alt="Capa do E-book" class="ebook-image" />
+    </div>
+    <!-- Coluna do texto e botão -->
+    <div class="text-container">
+      <h1 class="title">ARQUIVO SECRETO DO UNIVERSO NERD</h1>
+      <h2 class="subtitle">
+        10 Curiosidades Nerd que Todo Mundo Deveria Saber
+      </h2>
+      <p class="description">
+        Explore curiosidades incríveis sobre filmes, séries e animes! Descubra
+        bastidores e fatos surpreendentes que conectam ficção e realidade. Um
+        mergulho no universo geek para impressionar e se divertir!
+      </p>
+      <button mat-raised-button class="download-btn" (click)="downloadEbook()">
+        Baixar E-book
+      </button>
+    </div>
+  </div>
+</div>

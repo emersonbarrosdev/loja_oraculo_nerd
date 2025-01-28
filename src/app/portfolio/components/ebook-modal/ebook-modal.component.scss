@@ -1,0 +1,94 @@
+.modal-container {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Para organizar o botão X no topo e o conteúdo abaixo */
+  overflow: hidden;
+
+  max-width: 900px; /* Limita a largura do modal */
+  margin: auto; /* Centraliza o modal na tela */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.mat-mdc-icon-button .mat-mdc-button-touch-target {
+  background: none;
+}
+
+.close-btn:focus {
+  outline: none;
+}
+
+.modal-content {
+  display: flex; /* Coloca as colunas lado a lado */
+  flex-direction: row; /* Direção horizontal */
+  gap: 10px; /* Espaçamento entre as colunas */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  padding: 50px;
+  padding-right: 80px;
+  box-sizing: border-box;
+}
+
+.image-container {
+  flex: 0 0 50%; /* Ocupa 50% da largura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ebook-image {
+  width: 100%; /* Garante que a imagem ocupe todo o espaço da coluna */
+  max-width: 80%;
+}
+
+.text-container {
+  flex: 0 0 50%; /* Ocupa 50% da largura */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente o conteúdo */
+  text-align: left;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #ff9800;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #4a1c68;
+}
+
+.description {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.download-btn {
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #e08900;
+}
