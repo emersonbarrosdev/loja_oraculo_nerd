@@ -1,0 +1,57 @@
+<mat-toolbar class="toolbar">
+  <div class="container">
+    <button mat-button class="example-button-row me-5">
+      <img src="assets/oraculo_logo.png" class="background-image" />
+    </button>
+    <button mat-button class="example-button-row me-4 no-underline">
+      <a
+        href="https://www.youtube.com/@oficialoraculo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="no-underline"
+      >
+        Canal YouTube com 3k+
+      </a>
+    </button>
+    <button mat-button class="example-button-row me-4 no-underline">
+      <a
+        href="https://www.instagram.com/_oraculonerd/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="no-underline"
+      >
+        Meu Instagram
+      </a>
+    </button>
+    <button mat-button class="example-button-row me-4 no-underline">
+      <a
+        href="https://open.spotify.com/playlist/6Wsa6VHwhtVhr1oiBdatcw?si=9dd29bbfa24842f0"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="no-underline"
+      >
+        Minha Playlist Spotify
+      </a>
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-raised-button class="example-button-row me-4 no-underline" (click)="startDownload(loadingSpinner)">
+      Baixar E-book
+    </button>
+
+    <ng-template #loadingSpinner>
+      <div class="overlay">
+        <mat-spinner diameter="200"></mat-spinner>
+      </div>
+    </ng-template>
+    <button mat-button class="example-button-row me-4 no-underline">
+      <a
+        href="http://hotm.art/sRe0Uqy"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="no-underline"
+      >
+        Ingês com a Gringa
+      </a>
+    </button>
+  </div>
+</mat-toolbar>

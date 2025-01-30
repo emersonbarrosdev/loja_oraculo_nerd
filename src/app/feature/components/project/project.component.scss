@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+
+.search-bar {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #6222ee;
+  box-shadow: 0 0 5px #6222ee80;
+}
+
+
+main {
+  width: 100%;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-spinner {
+  border: 6px solid rgb(255, 255, 255);
+  border-top: 6px solid #2c2c3e;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #808080;
+  font-size: 1rem;
+  text-align: center;
+}

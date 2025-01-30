@@ -1,4 +1,5 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -9,13 +10,20 @@ html,
 body {
   width: 100%;
   height: 100%;
+  font-family: "Noto Sans", serif;
 }
 
-.mat-h2, .mat-headline-6, .mat-typography .mat-h2, .mat-typography .mat-headline-6, .mat-typography h2, h1 {
+.mat-h2,
+.mat-headline-6,
+.mat-typography .mat-h2,
+.mat-typography .mat-headline-6,
+.mat-typography h2,
+h1 {
   margin: 0;
 }
 
-.mat-mdc-button, .mat-mdc-outlined-button {
+.mat-mdc-button,
+.mat-mdc-outlined-button {
   --mat-mdc-button-persistent-ripple-color: none;
   --mat-mdc-button-ripple-color: hsla(210, 50%, 40%, 0.1);
 }
