@@ -22,7 +22,8 @@ export class GoogleSheetsService {
             image: row[0],         // Coluna Image
             title: row[1],         // Coluna Title
             description: row[2],   // Coluna Description
-            link: row[3]           // Coluna Link
+            link: row[3],           // Coluna Link
+            categories: row[4] ? row[4].split(',').map(c => c.trim()) : []
           } as Project;
         });
       })

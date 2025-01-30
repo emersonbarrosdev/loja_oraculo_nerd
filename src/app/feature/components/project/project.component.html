@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 
   <div class="search-bar">
     <input
@@ -21,5 +21,63 @@
       <p class="no-results">Nenhum produto encontrado.</p>
     </ng-template>
   </ng-template>
+  <app-scroll-button></app-scroll-button>
+</div> -->
+
+<div class="container">
+  
+  <!-- Barra de Pesquisa no Topo -->
+  <!-- <div class="search-bar">
+    <mat-form-field appearance="outline" class="search-input">
+      <mat-label>Busque produto por título ou descrição</mat-label>
+      <input matInput [formControl]="searchControl" />
+    </mat-form-field>
+  </div> -->
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [formControl]="searchControl"
+      placeholder="Busque produto por título ou descrição"
+    />
+  </div>
+
+  <!-- Layout Principal: Filtro e Cards -->
+  <div class="layout">
+    <!-- Filtro de Categorias à Esquerda -->
+      <mat-accordion>
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header>
+            <mat-panel-title>CATEGORIA</mat-panel-title>
+          </mat-expansion-panel-header>
+    
+          <div *ngFor="let category of categories">
+            <mat-checkbox [value]="category" (change)="toggleCategory($event)">
+              {{ category }}
+            </mat-checkbox>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    
+
+    <!-- Conteúdo Principal: Lista de Cards -->
+    <section class="content">
+      <div class="loading-container" *ngIf="showLoading; else projectList">
+        <div class="loading-spinner"></div>
+      </div>
+
+      <ng-template #projectList>
+        <main *ngIf="filteredProjectData.length > 0; else noResults">
+          <div class="tpotpo" *ngFor="let project of filteredProjectData">
+            <app-project-card [project]="project"></app-project-card>
+          </div>
+        </main>
+        <ng-template #noResults>
+          <p class="no-results">Nenhum produto encontrado.</p>
+        </ng-template>
+      </ng-template>
+    </section>
+  </div>
+
   <app-scroll-button></app-scroll-button>
 </div>
