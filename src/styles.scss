@@ -60,21 +60,29 @@ h1 {
   }
 }
 
-/**** Desabilitar modo escuro e forçar modo claro ****/
+/**** Desabilitar a adaptação automática ao modo escuro ****/
 :root {
-  color-scheme: light; /* Força o esquema de cores claro */
+  color-scheme: light; /* Força o modo claro no navegador */
 }
 
-/* Previne que o navegador altere as cores automaticamente */
+/* Forçar o fundo e o texto claros */
+html, body {
+  background-color: white !important; /* Fundo branco fixo */
+  color: black !important; /* Texto preto fixo */
+}
+
+/* Estilo fixo para a toolbar e componentes do Angular Material */
+.mat-toolbar, .mat-menu-panel, .mat-card, .mat-dialog-container {
+  background-color: white !important; /* Fundo branco fixo */
+  color: black !important; /* Texto escuro fixo */
+}
+
+
+/* Prevenção de herança do modo dark */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: white !important; /* Força o fundo branco */
-    color: black !important; /* Força o texto preto */
+  html, body {
+    background-color: white !important;
+    color: black !important;
   }
 
-  .mat-toolbar,
-  .mat-menu-panel {
-    background-color: #ffffff !important; /* Força fundo branco na toolbar e no menu */
-    color: #202020 !important; /* Força texto escuro */
-  }
 }
