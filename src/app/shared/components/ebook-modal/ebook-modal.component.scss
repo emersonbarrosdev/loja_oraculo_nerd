@@ -92,3 +92,41 @@
 .download-btn:hover {
   background-color: #e08900;
 }
+
+
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column; /* Muda a direção para vertical */
+    padding: 20px;
+  }
+
+  .image-container {
+    flex: 0 0 auto;
+    width: 40%; /* A imagem ocupará 41% da largura disponível */
+    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona espaçamento abaixo */
+  }
+
+  .ebook-image {
+    width: 100%; /* Garante que a imagem não ultrapasse os 41% da largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  .text-container {
+    flex: 0 0 auto;
+    width: 100%; /* Garante que o texto ocupe toda a largura restante */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .title, .subtitle {
+    font-size: 1.3em; /* Ajusta os tamanhos da fonte para telas menores */
+  }
+
+  .description {
+    font-size: 1em;
+  }
+
+  .download-btn {
+    padding: 8px 16px;
+    font-size: 1em;
+  }
+}

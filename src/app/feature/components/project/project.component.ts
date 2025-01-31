@@ -63,7 +63,6 @@ export class ProjectComponent implements OnInit {
         if (resp) {
           this.showLoading = false;
           this.projectData = resp.reverse();
-          console.log(this.projectData);
           this.filteredProjectData = [...this.projectData];
         }
       },

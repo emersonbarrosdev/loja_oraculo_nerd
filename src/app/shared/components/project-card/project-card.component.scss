@@ -87,3 +87,10 @@ button:hover {
   background: #00b081;
   color: #fff !important;
 }
+
+
+@media (max-width: 1366px) {
+  .movie-card {
+    width: 260px;
+  }
+}

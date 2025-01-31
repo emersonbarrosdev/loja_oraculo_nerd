@@ -28,8 +28,8 @@ export class AppComponent implements OnInit {
 
   openEbookModal(): void {
     this.dialog.open(EbookModalComponent, {
-      // width: '650px',
-      disableClose: false, // Permite o fechamento ao clicar no botão "X"
+      width: '700px',
+      disableClose: false,
     });
   }
 }
