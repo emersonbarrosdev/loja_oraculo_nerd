@@ -1,0 +1,66 @@
+<!-- Header para telas maiores que 768px -->
+<mat-toolbar class="toolbar" *ngIf="!isMobile">
+    <div class="container">
+      <button mat-button class="example-button-row me-5">
+        <img src="assets/oraculo_logo.png" class="background-image" />
+      </button>
+  
+      <button mat-button class="example-button-row me-4 no-underline">
+        <a href="https://www.youtube.com/@oficialoraculo" target="_blank" rel="noopener noreferrer" class="no-underline">
+          Canal YouTube com 3k+
+        </a>
+      </button>
+  
+      <button mat-button class="example-button-row me-4 no-underline">
+        <a href="https://www.instagram.com/_oraculonerd/" target="_blank" rel="noopener noreferrer" class="no-underline">
+          Meu Instagram
+        </a>
+      </button>
+  
+      <button mat-button class="example-button-row me-4 no-underline">
+        <a href="https://open.spotify.com/playlist/6Wsa6VHwhtVhr1oiBdatcw?si=9dd29bbfa24842f0" target="_blank" rel="noopener noreferrer" class="no-underline">
+          Minha Playlist Spotify
+        </a>
+      </button>
+  
+      <span class="example-spacer"></span>
+  
+      <button mat-raised-button class="example-button-row me-4 no-underline" (click)="startDownload()">
+        Baixar E-book
+      </button>
+  
+      <button mat-button class="example-button-row me-4 no-underline">
+        <a href="http://hotm.art/sRe0Uqy" target="_blank" rel="noopener noreferrer" class="no-underline">
+          Inglês com a Gringa
+        </a>
+      </button>
+    </div>
+  </mat-toolbar>
+  
+<!-- Header mobile com menu hambúrguer -->
+<mat-toolbar class="toolbar" *ngIf="isMobile">
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button><span>Oráculo Nerd</span>
+  </mat-toolbar>
+  
+  <!-- Menu no mobile -->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <a href="https://www.youtube.com/@oficialoraculo" target="_blank" rel="noopener noreferrer"class="menu-no-underline">YouTube</a>
+    </button>
+    <button mat-menu-item>
+      <a href="https://www.instagram.com/_oraculonerd/" target="_blank" rel="noopener noreferrer"class="menu-no-underline">Instagram</a>
+    </button>
+    <button mat-menu-item>
+      <a href="https://open.spotify.com/playlist/6Wsa6VHwhtVhr1oiBdatcw?si=9dd29bbfa24842f0" target="_blank" rel="noopener noreferrer"class="menu-no-underline">Spotify</a>
+    </button>
+    <button mat-menu-item>
+      <a href="http://hotm.art/sRe0Uqy" target="_blank" rel="noopener noreferrer"class="menu-no-underline">Inglês com a Gringa</a>
+    </button>
+    <button mat-menu-item class="menu-btn" (click)="startDownload()">Baixar E-book</button>
+  </mat-menu>
+  
+  <!-- Spinner de download -->
+  <div *ngIf="showSpinner" class="overlay">
+    <mat-spinner diameter="200"></mat-spinner>
+  </div>
+  

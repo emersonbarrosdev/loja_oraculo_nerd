@@ -28,3 +28,53 @@ h1 {
   --mat-mdc-button-persistent-ripple-color: none;
   --mat-mdc-button-ripple-color: hsla(210, 50%, 40%, 0.1);
 }
+@media (max-width: 1200px) {
+  .movie-card {
+    width: 250px;
+  }
+
+  .banner {
+    padding: 3rem 0;
+  }
+
+  .nav-links {
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner .container {
+    width: 90%;
+  }
+
+  .movie-card {
+    width: 200px;
+  }
+
+  .footer {
+    padding: 0.5rem;
+  }
+}
+
+/**** Desabilitar modo escuro e forçar modo claro ****/
+:root {
+  color-scheme: light; /* Força o esquema de cores claro */
+}
+
+/* Previne que o navegador altere as cores automaticamente */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white !important; /* Força o fundo branco */
+    color: black !important; /* Força o texto preto */
+  }
+
+  .mat-toolbar,
+  .mat-menu-panel {
+    background-color: #ffffff !important; /* Força fundo branco na toolbar e no menu */
+    color: #202020 !important; /* Força texto escuro */
+  }
+}

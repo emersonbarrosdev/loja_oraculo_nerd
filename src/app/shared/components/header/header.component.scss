@@ -1,0 +1,62 @@
+/* Estilos gerais do toolbar e layout desktop (mantidos como estão) */
+.mat-toolbar {
+  width: 100%;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.background-image {
+  height: 1rem;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-mdc-button,
+.mat-mdc-outlined-button {
+  --mat-mdc-button-ripple-color: none;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.no-underline:hover {
+  color: #6222ee;
+  transform: scale(1.1);
+}
+
+.mat-mdc-raised-button.mat-unthemed {
+  --mdc-protected-button-container-color: #6222ee;
+  --mdc-protected-button-label-text-color: #fff;
+}
+
+.mat-mdc-raised-button.mat-unthemed:hover {
+  background-color: #ffdd00;
+  color: #6222ee;
+}
+
+
+.menu-no-underline {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-btn{
+    background-color: #ffdd00;
+    color: #6222ee;
+}
+
+@media (max-width: 768px) {
+  .sidenav {
+    position: fixed;
+    z-index: 1000;
+  }
+}
