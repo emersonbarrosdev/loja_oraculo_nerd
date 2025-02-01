@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EbookModalComponent } from './shared/components/ebook-modal/ebook-modal.component';
 import { CommonModule } from '@angular/common';
@@ -20,11 +20,10 @@ import { HomeComponent } from './feature/components/home/home.component';
 export class AppComponent implements OnInit {
   title = 'oraculo-nerd';
 
-  constructor(private dialog: MatDialog, private renderer: Renderer2) {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.openEbookModal();
-    this.disableDarkMode();
   }
 
   openEbookModal(): void {
@@ -32,11 +31,5 @@ export class AppComponent implements OnInit {
       width: '700px',
       disableClose: false,
     });
-  }
-
-
-  private disableDarkMode(): void {
-    // Remove o comportamento automático do modo escuro
-    this.renderer.setAttribute(document.body, 'style', 'background-color: white; color: black;');
   }
 }
