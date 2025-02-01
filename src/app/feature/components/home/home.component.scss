@@ -87,3 +87,9 @@ a {
     line-height: 1.6;
   }
   
+  @media (max-width: 768px) {
+    .support-message {
+        font-size: .8rem;
+        line-height: 1;
+      }
+   }

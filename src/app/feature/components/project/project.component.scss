@@ -1,3 +1,109 @@
+// .search-bar {
+//   width: 100%;
+//   margin-bottom: 2rem;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .search-bar input {
+//   width: 100%;
+//   padding: 1rem 1rem;
+//   font-size: 1rem;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   outline: none;
+//   transition: border-color 0.3s ease;
+// }
+
+// .search-bar input:focus {
+//   border-color: #6222ee;
+//   box-shadow: 0 0 5px #6222ee80;
+// }
+
+// .layout {
+//   display: grid;
+//   grid-template-columns: 250px 1fr;
+//   gap: 2.5rem;
+//   height: auto;
+// }
+
+// mat-accordion {
+//   width: 100%;
+// }
+
+// mat-expansion-panel {
+//   box-shadow: none;
+//   border: none;
+// }
+
+// mat-checkbox {
+//   display: block;
+//   margin: 0.5rem 0;
+// }
+
+// .content {
+//   display: block;
+//   width: 100%;
+// }
+
+// main {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, 300px);
+//   gap: 2.5rem;
+//   justify-content: center;
+//   padding-bottom: 2rem;
+// }
+
+// .loading-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+// }
+
+// .no-results {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100%;
+//   color: #808080;
+//   font-size: 1rem;
+//   text-align: center;
+// }
+
+// ::ng-deep
+//   .mdc-checkbox
+//   .mdc-checkbox__native-control:enabled:checked
+//   ~ .mdc-checkbox__background,
+// .mdc-checkbox
+//   .mdc-checkbox__native-control:enabled:indeterminate
+//   ~ .mdc-checkbox__background,
+// .mdc-checkbox
+//   .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
+//   ~ .mdc-checkbox__background {
+//   border-color: #6222ee !important;
+// }
+
+// ::ng-deep
+//   .mdc-checkbox
+//   .mdc-checkbox__native-control:enabled
+//   ~ .mdc-checkbox__background
+//   .mdc-checkbox__checkmark {
+//   background: #6222ee !important;
+// }
+
+// @media (max-width: 1366px) {
+//   .layout {
+//     grid-template-columns: 240px 1fr;
+//     gap: 1.5rem;
+//   }
+
+//   main {
+//     grid-template-columns: repeat(auto-fill, 250px);
+//     gap: 2.5rem;
+//   }
+// }
+
 .search-bar {
   width: 100%;
   margin-bottom: 2rem;
@@ -24,21 +130,10 @@
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 2.5rem;
-  height: auto;
 }
 
-mat-accordion {
+.categories-panel {
   width: 100%;
-}
-
-mat-expansion-panel {
-  box-shadow: none;
-  border: none;
-}
-
-mat-checkbox {
-  display: block;
-  margin: 0.5rem 0;
 }
 
 .content {
@@ -92,14 +187,15 @@ main {
   background: #6222ee !important;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 768px) {
   .layout {
-    grid-template-columns: 240px 1fr;
-    gap: 1.5rem;
+    display: block;
   }
 
   main {
-    grid-template-columns: repeat(auto-fill, 250px);
-    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 250px));
+    place-content: center;
   }
 }

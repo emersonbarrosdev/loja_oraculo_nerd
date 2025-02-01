@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../../shared/interface/project';
 import { GoogleSheetsService } from 'src/app/core/service/google-sheets.service';
@@ -36,14 +36,16 @@ export class ProjectComponent implements OnInit {
   public searchControl = new FormControl('');
   public filteredProjectData: Project[] = [];
   public selectedCategories: Set<string> = new Set();
+  isMobile: boolean = false;
 
   // Adicione as categorias disponíveis aqui
   public categories: string[] = ['Livros', 'Mangás', 'Eletrônicos', 'Fitness', 'Beleza', 'Saúde', 'Jogos', 'Tecnologia', 'Papelaria'];
 
-
   constructor(private googleSheetsService: GoogleSheetsService) {}
 
   ngOnInit(): void {
+    this.checkViewport();
+
     this.getProject();
 
     this.searchControl.valueChanges.subscribe((query: string) => {
@@ -54,6 +56,15 @@ export class ProjectComponent implements OnInit {
           project.description.toLowerCase().includes(normalizedQuery)
       );
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkViewport();
+  }
+
+  private checkViewport() {
+    this.isMobile = window.innerWidth <= 768;
   }
 
   getProject() {
