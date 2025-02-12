@@ -19,11 +19,11 @@ export class GoogleSheetsService {
         const headers = rows.shift(); // Retira os cabeçalhos
         return rows.map((row: string[]) => {
           return {
-            image: row[0],         // Coluna Image
-            title: row[1],         // Coluna Title
-            description: row[2],   // Coluna Description
-            link: row[3],           // Coluna Link
-            categories: row[4] ? row[4].split(',').map(c => c.trim()) : []
+            image: row[1],         // Coluna Image
+            title: row[2],         // Coluna Title
+            description: row[3],   // Coluna Description
+            link: row[4],           // Coluna Link
+            categories: row[5] ? row[5].split(',').map(c => c.trim()) : []
           } as Project;
         });
       })
