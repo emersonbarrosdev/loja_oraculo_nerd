@@ -39,7 +39,7 @@ export class ProjectComponent implements OnInit {
   isMobile: boolean = false;
 
   // Adicione as categorias disponíveis aqui
-  public categories: string[] = ['Livros', 'Mangás', 'Eletrônicos', 'Fitness', 'Beleza', 'Saúde', 'Jogos', 'Tecnologia', 'Papelaria'];
+  public categories: string[] = ['Livros', 'Mangás', 'Eletrônicos', 'Fitness', 'Beleza', 'Saúde', 'Jogos', 'Tecnologia', 'Papelaria', 'Casa', 'Pet Shop', 'Roupas e Acessórios', 'Móveis e Decoração', 'Outros'];
 
   constructor(private googleSheetsService: GoogleSheetsService) {}
 
