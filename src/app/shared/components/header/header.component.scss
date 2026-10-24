@@ -4,23 +4,23 @@
   z-index: 1000;
   width: 100%;
   padding: 0;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid var(--oraculo-border);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 8px 24px rgba(31, 22, 43, 0.05);
+  backdrop-filter: blur(14px);
+  box-shadow: none;
 }
 
 .desktop-toolbar {
-  min-height: 72px;
+  min-height: 64px;
 }
 
 .nav-shell {
-  width: min(1180px, calc(100% - 40px));
-  height: 72px;
+  width: min(1200px, calc(100% - 48px));
+  height: 64px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 34px;
 }
 
 .brand {
@@ -32,70 +32,90 @@
 .brand img {
   display: block;
   width: auto;
-  height: 32px;
+  height: 29px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-left: 14px;
+  gap: 26px;
 }
 
 .nav-links a {
-  padding: 10px 12px;
-  border-radius: 10px;
-  color: #514b58;
-  font-size: 0.9rem;
-  font-weight: 700;
+  position: relative;
+  padding: 22px 0 20px;
+  color: #5d5863;
+  font-size: 0.82rem;
+  font-weight: 500;
   text-decoration: none;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: color 0.18s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 13px;
+  height: 1px;
+  background: var(--oraculo-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.18s ease;
 }
 
 .nav-links a:hover {
   color: var(--oraculo-primary);
-  background: var(--oraculo-primary-soft);
 }
 
-.ebook-btn.mat-mdc-raised-button {
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.ebook-btn.mat-mdc-button {
   margin-left: auto;
-  min-width: 132px;
-  background: var(--oraculo-accent);
-  color: var(--oraculo-primary-dark);
-  font-weight: 800;
-  box-shadow: none;
+  min-width: auto;
+  padding: 0 2px;
+  color: var(--oraculo-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.ebook-btn.mat-mdc-raised-button:hover {
-  background: var(--oraculo-accent-warm);
+.ebook-btn span {
+  margin-left: 6px;
+  font-size: 0.88rem;
 }
 
 .mobile-toolbar {
-  min-height: 62px;
+  min-height: 58px;
   padding: 0 12px;
 }
 
 .menu-trigger {
-  min-width: 44px;
+  min-width: 42px;
   padding: 0;
-  color: var(--oraculo-primary);
+  color: var(--oraculo-ink);
 }
 
 .mobile-brand {
-  margin-left: 6px;
-  color: var(--oraculo-ink);
-  font-size: 1rem;
-  font-weight: 800;
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.mobile-brand img {
+  width: auto;
+  height: 24px;
 }
 
 .mobile-spacer {
   flex: 1 1 auto;
 }
 
-.ebook-btn--mobile.mat-mdc-raised-button {
-  min-width: 82px;
-  padding: 0 14px;
+.ebook-btn--mobile.mat-mdc-button {
+  margin-left: 0;
+  padding: 0 8px;
 }
 
 .download-overlay {
@@ -104,23 +124,17 @@
   z-index: 2000;
   display: grid;
   place-items: center;
-  background: rgba(20, 14, 28, 0.66);
-  backdrop-filter: blur(4px);
+  background: rgba(17, 15, 21, 0.62);
+  backdrop-filter: blur(3px);
 }
 
 @media (max-width: 900px) {
   .nav-shell {
-    width: min(100% - 28px, 1180px);
-    gap: 16px;
+    width: min(100% - 32px, 1200px);
+    gap: 22px;
   }
 
   .nav-links {
-    gap: 2px;
-    margin-left: 0;
-  }
-
-  .nav-links a {
-    padding-inline: 8px;
-    font-size: 0.82rem;
+    gap: 18px;
   }
 }
