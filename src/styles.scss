@@ -1,61 +1,82 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+:root {
+  --oraculo-primary: #a27bff;
+  --oraculo-primary-dark: #7c3aed;
+  --oraculo-primary-soft: rgba(162, 123, 255, 0.12);
+  --oraculo-accent: #ffdd00;
+  --oraculo-accent-warm: #f7c92f;
+  --oraculo-success: #2dd4a7;
+  --oraculo-ink: #f4f0f7;
+  --oraculo-muted: #9d96a6;
+  --oraculo-surface: #0f0d12;
+  --oraculo-surface-raised: #17131c;
+  --oraculo-surface-soft: #1c1722;
+  --oraculo-border: #2a2430;
+  --oraculo-border-strong: #3b3344;
+  --oraculo-radius: 10px;
+}
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
   width: 100%;
-  height: 100%;
-  font-family: "Noto Sans", serif;
+  min-height: 100%;
+  color-scheme: dark;
+  font-family: "Inter", sans-serif;
 }
 
-.mat-h2,
-.mat-headline-6,
-.mat-typography .mat-h2,
-.mat-typography .mat-headline-6,
-.mat-typography h2,
-h1 {
-  margin: 0;
+body {
+  color: var(--oraculo-ink);
+  background: var(--oraculo-surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(162, 123, 255, 0.62);
+  outline-offset: 3px;
 }
 
 .mat-mdc-button,
 .mat-mdc-outlined-button {
-  --mat-mdc-button-persistent-ripple-color: none;
-  --mat-mdc-button-ripple-color: hsla(210, 50%, 40%, 0.1);
-}
-@media (max-width: 1200px) {
-  .movie-card {
-    width: 250px;
-  }
-
-  .banner {
-    padding: 3rem 0;
-  }
-
-  .nav-links {
-    font-size: 0.9rem;
-  }
-
-  .footer {
-    font-size: 0.8rem;
-  }
+  --mat-mdc-button-persistent-ripple-color: transparent;
+  --mat-mdc-button-ripple-color: rgba(162, 123, 255, 0.08);
 }
 
-@media (max-width: 768px) {
-  .banner .container {
-    width: 90%;
-  }
+.mat-mdc-menu-panel {
+  --mat-menu-container-color: #17131c;
+  --mat-menu-item-label-text-color: #e9e4ee;
+  --mat-menu-item-hover-state-layer-color: rgba(162, 123, 255, 0.08);
+}
 
-  .movie-card {
-    width: 200px;
-  }
-
-  .footer {
-    padding: 0.5rem;
-  }
+.mat-mdc-tooltip {
+  --mdc-plain-tooltip-container-color: #2a2430;
+  --mdc-plain-tooltip-supporting-text-color: #f4f0f7;
 }

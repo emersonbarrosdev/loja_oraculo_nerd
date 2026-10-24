@@ -1,48 +1,62 @@
-<div class="container">
-  <!-- Barra de Pesquisa no Topo -->
+<section class="catalog-shell">
+  <div class="catalog-heading">
+    <div>
+      <span class="catalog-kicker">Loja Oráculo Nerd</span>
+      <h2>Encontre seu próximo achado nerd</h2>
+      <p>Pesquise por nome, descrição ou filtre pelas categorias disponíveis.</p>
+    </div>
+  </div>
+
   <div class="search-bar">
+    <label for="product-search">Buscar produtos</label>
     <input
-      type="text"
+      id="product-search"
+      type="search"
       [formControl]="searchControl"
-      placeholder="Busque produto por título ou descrição"
+      placeholder="Ex.: action figure, livro, acessório..."
+      autocomplete="off"
     />
   </div>
 
-  <!-- Layout Principal: Filtro e Cards -->
-  <div class="layout">
-    <!-- Filtro de Categorias -->
-    <mat-accordion class="categories-panel">
-      <mat-expansion-panel [expanded]="!isMobile">
-        <mat-expansion-panel-header>
-          <mat-panel-title>CATEGORIA</mat-panel-title>
-        </mat-expansion-panel-header>
+  <div class="catalog-layout">
+    <aside class="filters-column">
+      <mat-accordion class="categories-panel">
+        <mat-expansion-panel [expanded]="!isMobile">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Categorias</mat-panel-title>
+          </mat-expansion-panel-header>
 
-        <div *ngFor="let category of categories">
-          <mat-checkbox [value]="category" (change)="toggleCategory($event)">
-            {{ category }}
-          </mat-checkbox>
-        </div>
-      </mat-expansion-panel>
-    </mat-accordion>
+          <div class="category-list">
+            <mat-checkbox *ngFor="let category of categories" [value]="category" (change)="toggleCategory($event)">
+              {{ category }}
+            </mat-checkbox>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </aside>
 
-    <!-- Conteúdo Principal: Lista de Cards -->
-    <section class="content">
+    <section class="catalog-content">
       <div class="loading-container" *ngIf="showLoading; else projectList">
         <div class="loading-spinner"></div>
+        <span>Carregando produtos...</span>
       </div>
 
       <ng-template #projectList>
-        <main *ngIf="filteredProjectData.length > 0; else noResults">
-          <div class="tpotpo" *ngFor="let project of filteredProjectData">
+        <main class="product-grid" *ngIf="filteredProjectData.length > 0; else noResults">
+          <div class="product-item" *ngFor="let project of filteredProjectData">
             <app-project-card [project]="project"></app-project-card>
           </div>
         </main>
+
         <ng-template #noResults>
-          <p class="no-results">Nenhum produto encontrado.</p>
+          <div class="no-results">
+            <strong>Nenhum produto encontrado</strong>
+            <span>Tente outro termo ou altere os filtros selecionados.</span>
+          </div>
         </ng-template>
       </ng-template>
     </section>
   </div>
 
   <app-scroll-button></app-scroll-button>
-</div>
+</section>

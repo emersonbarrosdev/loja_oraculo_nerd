@@ -1,61 +1,140 @@
-/* Estilos gerais do toolbar e layout desktop (mantidos como estão) */
-.mat-toolbar {
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
   padding: 0;
+  background: rgba(15, 13, 18, 0.94);
+  border-bottom: 1px solid var(--oraculo-border);
+  backdrop-filter: blur(14px);
+  box-shadow: none;
 }
 
-.container {
+.desktop-toolbar {
+  min-height: 64px;
+}
+
+.nav-shell {
+  width: min(1200px, calc(100% - 48px));
+  height: 64px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
+  gap: 34px;
 }
 
-.background-image {
-  height: 1rem;
+.brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
 }
 
-.example-spacer {
+.brand img {
+  display: block;
+  width: auto;
+  height: 29px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 22px 0 20px;
+  color: #a59eac;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 13px;
+  height: 1px;
+  background: var(--oraculo-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.18s ease;
+}
+
+.nav-links a:hover {
+  color: #d8caff;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.ebook-btn.mat-mdc-button {
+  margin-left: auto;
+  min-width: auto;
+  padding: 0 2px;
+  color: var(--oraculo-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ebook-btn span {
+  margin-left: 6px;
+  font-size: 0.88rem;
+}
+
+.mobile-toolbar {
+  min-height: 58px;
+  padding: 0 12px;
+}
+
+.menu-trigger {
+  min-width: 42px;
+  padding: 0;
+  color: var(--oraculo-ink);
+}
+
+.mobile-brand {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.mobile-brand img {
+  width: auto;
+  height: 24px;
+}
+
+.mobile-spacer {
   flex: 1 1 auto;
 }
 
-.mat-mdc-button,
-.mat-mdc-outlined-button {
-  --mat-mdc-button-ripple-color: none;
+.ebook-btn--mobile.mat-mdc-button {
+  margin-left: 0;
+  padding: 0 8px;
 }
 
-.no-underline {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s ease, color 0.3s ease;
+.download-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  background: rgba(6, 5, 8, 0.82);
+  backdrop-filter: blur(3px);
 }
 
-.no-underline:hover {
-  color: #6222ee;
-  transform: scale(1.1);
-}
+@media (max-width: 900px) {
+  .nav-shell {
+    width: min(100% - 32px, 1200px);
+    gap: 22px;
+  }
 
-.mat-mdc-raised-button.mat-unthemed {
-  --mdc-protected-button-container-color: #6222ee;
-  --mdc-protected-button-label-text-color: #fff;
-}
-
-.mat-mdc-raised-button.mat-unthemed:hover {
-  color: #fff;
-}
-
-
-.menu-no-underline {
-  text-decoration: none;
-  color: inherit;
-}
-
-.menu-btn{
-    background-color: #ffdd00;
-    color: #6222ee;
-}
-
-@media (max-width: 768px) {
-  .sidenav {
-    position: fixed;
-    z-index: 1000;
+  .nav-links {
+    gap: 18px;
   }
 }

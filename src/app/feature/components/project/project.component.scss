@@ -1,201 +1,238 @@
-// .search-bar {
-//   width: 100%;
-//   margin-bottom: 2rem;
-//   display: flex;
-//   justify-content: center;
-// }
+.catalog-shell {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 66px 0 82px;
+}
 
-// .search-bar input {
-//   width: 100%;
-//   padding: 1rem 1rem;
-//   font-size: 1rem;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-//   outline: none;
-//   transition: border-color 0.3s ease;
-// }
+.catalog-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
 
-// .search-bar input:focus {
-//   border-color: #6222ee;
-//   box-shadow: 0 0 5px #6222ee80;
-// }
+.catalog-kicker {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--oraculo-primary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
 
-// .layout {
-//   display: grid;
-//   grid-template-columns: 250px 1fr;
-//   gap: 2.5rem;
-//   height: auto;
-// }
+.catalog-heading h2 {
+  margin: 0;
+  color: var(--oraculo-ink);
+  font-size: clamp(1.75rem, 3.8vw, 2.45rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
 
-// mat-accordion {
-//   width: 100%;
-// }
-
-// mat-expansion-panel {
-//   box-shadow: none;
-//   border: none;
-// }
-
-// mat-checkbox {
-//   display: block;
-//   margin: 0.5rem 0;
-// }
-
-// .content {
-//   display: block;
-//   width: 100%;
-// }
-
-// main {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, 300px);
-//   gap: 2.5rem;
-//   justify-content: center;
-//   padding-bottom: 2rem;
-// }
-
-// .loading-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100vh;
-// }
-
-// .no-results {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-//   color: #808080;
-//   font-size: 1rem;
-//   text-align: center;
-// }
-
-// ::ng-deep
-//   .mdc-checkbox
-//   .mdc-checkbox__native-control:enabled:checked
-//   ~ .mdc-checkbox__background,
-// .mdc-checkbox
-//   .mdc-checkbox__native-control:enabled:indeterminate
-//   ~ .mdc-checkbox__background,
-// .mdc-checkbox
-//   .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
-//   ~ .mdc-checkbox__background {
-//   border-color: #6222ee !important;
-// }
-
-// ::ng-deep
-//   .mdc-checkbox
-//   .mdc-checkbox__native-control:enabled
-//   ~ .mdc-checkbox__background
-//   .mdc-checkbox__checkmark {
-//   background: #6222ee !important;
-// }
-
-// @media (max-width: 1366px) {
-//   .layout {
-//     grid-template-columns: 240px 1fr;
-//     gap: 1.5rem;
-//   }
-
-//   main {
-//     grid-template-columns: repeat(auto-fill, 250px);
-//     gap: 2.5rem;
-//   }
-// }
+.catalog-heading p {
+  margin: 10px 0 0;
+  color: var(--oraculo-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
 
 .search-bar {
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-bar label {
+  display: block;
+  margin-bottom: 8px;
+  color: #aaa3b1;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .search-bar input {
   width: 100%;
-  padding: 1rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--oraculo-border-strong);
+  border-radius: 7px;
   outline: none;
-  transition: border-color 0.3s ease;
+  background: var(--oraculo-surface-raised);
+  color: var(--oraculo-ink);
+  font-size: 0.9rem;
+  box-shadow: none;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.search-bar input::placeholder {
+  color: #6f6875;
 }
 
 .search-bar input:focus {
-  border-color: #6222ee;
-  box-shadow: 0 0 5px #6222ee80;
+  border-color: var(--oraculo-primary);
+  background: #1a1620;
+  box-shadow: none;
 }
 
-.layout {
+.catalog-layout {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 38px;
+  align-items: start;
+}
+
+.filters-column {
+  position: sticky;
+  top: 86px;
 }
 
 .categories-panel {
   width: 100%;
 }
 
-.content {
-  display: block;
-  width: 100%;
+::ng-deep .categories-panel .mat-expansion-panel {
+  border: 1px solid var(--oraculo-border);
+  border-radius: 8px !important;
+  background: var(--oraculo-surface-raised);
+  box-shadow: none !important;
 }
 
-main {
+::ng-deep .categories-panel .mat-expansion-panel-header {
+  min-height: 52px;
+  padding: 0 14px;
+  background: transparent !important;
+}
+
+::ng-deep .categories-panel .mat-expansion-panel-header:hover {
+  background: rgba(162, 123, 255, 0.05) !important;
+}
+
+::ng-deep .categories-panel .mat-expansion-panel-body {
+  padding: 0 14px 14px;
+}
+
+::ng-deep .categories-panel .mat-expansion-panel-header-title {
+  color: var(--oraculo-ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+::ng-deep .categories-panel .mat-expansion-indicator::after {
+  color: var(--oraculo-muted);
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+::ng-deep .category-list .mdc-label {
+  color: #aaa3b1;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+::ng-deep .category-list .mdc-checkbox__background {
+  border-color: #5a5063 !important;
+}
+
+::ng-deep .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
+::ng-deep .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
+::ng-deep .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate="true"]:enabled ~ .mdc-checkbox__background {
+  border-color: var(--oraculo-primary) !important;
+  background: var(--oraculo-primary) !important;
+}
+
+.catalog-content {
+  min-width: 0;
+}
+
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  gap: 2.5rem;
-  justify-content: center;
-  padding-bottom: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 22px;
+}
+
+.product-item {
+  min-width: 0;
+  display: flex;
 }
 
 .loading-container {
+  min-height: 320px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  gap: 12px;
+  color: var(--oraculo-muted);
+  font-size: 0.8rem;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--oraculo-primary-soft);
+  border-top-color: var(--oraculo-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .no-results {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  color: #808080;
-  font-size: 1rem;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
+  padding: 28px;
+  border: 1px dashed var(--oraculo-border-strong);
+  border-radius: 8px;
+  background: var(--oraculo-surface-raised);
   text-align: center;
 }
 
-::ng-deep
-  .mdc-checkbox
-  .mdc-checkbox__native-control:enabled:checked
-  ~ .mdc-checkbox__background,
-.mdc-checkbox
-  .mdc-checkbox__native-control:enabled:indeterminate
-  ~ .mdc-checkbox__background,
-.mdc-checkbox
-  .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
-  ~ .mdc-checkbox__background {
-  border-color: #6222ee !important;
+.no-results strong {
+  color: var(--oraculo-ink);
+  font-weight: 600;
 }
 
-::ng-deep
-  .mdc-checkbox
-  .mdc-checkbox__native-control:enabled
-  ~ .mdc-checkbox__background
-  .mdc-checkbox__checkmark {
-  background: #6222ee !important;
+.no-results span {
+  color: var(--oraculo-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1060px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-  .layout {
-    display: block;
+  .catalog-shell {
+    width: min(100% - 28px, 1200px);
+    padding: 50px 0 62px;
   }
 
-  main {
-    justify-content: center;
-    margin-top: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 250px));
-    place-content: center;
+  .catalog-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .filters-column {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
