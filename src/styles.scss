@@ -2,18 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-  --oraculo-primary: #6222ee;
-  --oraculo-primary-dark: #4b18bd;
-  --oraculo-primary-soft: #f6f3ff;
+  --oraculo-primary: #a27bff;
+  --oraculo-primary-dark: #7c3aed;
+  --oraculo-primary-soft: rgba(162, 123, 255, 0.12);
   --oraculo-accent: #ffdd00;
   --oraculo-accent-warm: #f7c92f;
-  --oraculo-success: #00b081;
-  --oraculo-ink: #17151b;
-  --oraculo-muted: #716d78;
-  --oraculo-surface: #ffffff;
-  --oraculo-surface-soft: #faf9fc;
-  --oraculo-border: #e7e3eb;
-  --oraculo-border-strong: #d7d1dd;
+  --oraculo-success: #2dd4a7;
+  --oraculo-ink: #f4f0f7;
+  --oraculo-muted: #9d96a6;
+  --oraculo-surface: #0f0d12;
+  --oraculo-surface-raised: #17131c;
+  --oraculo-surface-soft: #1c1722;
+  --oraculo-border: #2a2430;
+  --oraculo-border-strong: #3b3344;
   --oraculo-radius: 10px;
 }
 
@@ -33,6 +34,7 @@ html,
 body {
   width: 100%;
   min-height: 100%;
+  color-scheme: dark;
   font-family: "Inter", sans-serif;
 }
 
@@ -58,12 +60,23 @@ img {
 }
 
 :focus-visible {
-  outline: 2px solid rgba(98, 34, 238, 0.55);
+  outline: 2px solid rgba(162, 123, 255, 0.62);
   outline-offset: 3px;
 }
 
 .mat-mdc-button,
 .mat-mdc-outlined-button {
   --mat-mdc-button-persistent-ripple-color: transparent;
-  --mat-mdc-button-ripple-color: rgba(98, 34, 238, 0.06);
+  --mat-mdc-button-ripple-color: rgba(162, 123, 255, 0.08);
+}
+
+.mat-mdc-menu-panel {
+  --mat-menu-container-color: #17131c;
+  --mat-menu-item-label-text-color: #e9e4ee;
+  --mat-menu-item-hover-state-layer-color: rgba(162, 123, 255, 0.08);
+}
+
+.mat-mdc-tooltip {
+  --mdc-plain-tooltip-container-color: #2a2430;
+  --mdc-plain-tooltip-supporting-text-color: #f4f0f7;
 }

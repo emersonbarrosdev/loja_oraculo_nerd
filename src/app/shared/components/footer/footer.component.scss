@@ -1,7 +1,7 @@
 .footer {
   padding: 38px 0 24px;
   border-top: 1px solid var(--oraculo-border);
-  background: #fff;
+  background: #0b090d;
   color: var(--oraculo-ink);
 }
 
@@ -42,7 +42,7 @@
 .footer-links a {
   position: relative;
   padding: 2px 0;
-  color: #625d67;
+  color: #aaa3b1;
   font-size: 0.76rem;
   font-weight: 500;
   text-decoration: none;
@@ -61,7 +61,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--oraculo-primary);
+  color: #d8caff;
 }
 
 .footer-links a:hover::after {
@@ -72,7 +72,7 @@
   grid-column: 1 / -1;
   padding-top: 18px;
   border-top: 1px solid var(--oraculo-border);
-  color: #a19ba6;
+  color: #6f6875;
   font-size: 0.7rem;
 }
 

@@ -44,7 +44,7 @@
 .search-bar label {
   display: block;
   margin-bottom: 8px;
-  color: #5e5964;
+  color: #aaa3b1;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -57,19 +57,20 @@
   border: 1px solid var(--oraculo-border-strong);
   border-radius: 7px;
   outline: none;
-  background: #fff;
+  background: var(--oraculo-surface-raised);
   color: var(--oraculo-ink);
   font-size: 0.9rem;
   box-shadow: none;
-  transition: border-color 0.18s ease;
+  transition: border-color 0.18s ease, background 0.18s ease;
 }
 
 .search-bar input::placeholder {
-  color: #aaa5ae;
+  color: #6f6875;
 }
 
 .search-bar input:focus {
   border-color: var(--oraculo-primary);
+  background: #1a1620;
   box-shadow: none;
 }
 
@@ -92,13 +93,18 @@
 ::ng-deep .categories-panel .mat-expansion-panel {
   border: 1px solid var(--oraculo-border);
   border-radius: 8px !important;
-  background: #fff;
+  background: var(--oraculo-surface-raised);
   box-shadow: none !important;
 }
 
 ::ng-deep .categories-panel .mat-expansion-panel-header {
   min-height: 52px;
   padding: 0 14px;
+  background: transparent !important;
+}
+
+::ng-deep .categories-panel .mat-expansion-panel-header:hover {
+  background: rgba(162, 123, 255, 0.05) !important;
 }
 
 ::ng-deep .categories-panel .mat-expansion-panel-body {
@@ -111,6 +117,10 @@
   font-weight: 600;
 }
 
+::ng-deep .categories-panel .mat-expansion-indicator::after {
+  color: var(--oraculo-muted);
+}
+
 .category-list {
   display: flex;
   flex-direction: column;
@@ -118,9 +128,13 @@
 }
 
 ::ng-deep .category-list .mdc-label {
-  color: #625d67;
+  color: #aaa3b1;
   font-size: 0.8rem;
   font-weight: 400;
+}
+
+::ng-deep .category-list .mdc-checkbox__background {
+  border-color: #5a5063 !important;
 }
 
 ::ng-deep .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
@@ -180,7 +194,7 @@
   padding: 28px;
   border: 1px dashed var(--oraculo-border-strong);
   border-radius: 8px;
-  background: #fff;
+  background: var(--oraculo-surface-raised);
   text-align: center;
 }
 

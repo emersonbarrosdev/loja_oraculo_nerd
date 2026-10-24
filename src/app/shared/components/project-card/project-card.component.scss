@@ -6,14 +6,15 @@
   overflow: hidden;
   border: 1px solid var(--oraculo-border);
   border-radius: 9px;
-  background: #fff;
+  background: var(--oraculo-surface-raised);
   box-shadow: none;
-  transition: border-color 0.18s ease, transform 0.18s ease;
+  transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
 }
 
 .product-card:hover {
   transform: translateY(-2px);
-  border-color: #bfb5ca;
+  border-color: rgba(162, 123, 255, 0.44);
+  background: #19151e;
   box-shadow: none;
 }
 
@@ -22,7 +23,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: #fbfafc;
+  background: #121016;
   border-bottom: 1px solid var(--oraculo-border);
   overflow: hidden;
 }
@@ -86,15 +87,16 @@ mat-card-actions {
   border: 1px solid var(--oraculo-primary);
   border-radius: 6px;
   background: transparent;
-  color: var(--oraculo-primary);
+  color: #bba4ff;
   font-size: 0.8rem;
   font-weight: 600;
   box-shadow: none;
-  transition: background 0.18s ease, color 0.18s ease;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
 
 .buy-button.mat-mdc-raised-button:hover {
-  background: var(--oraculo-primary);
+  border-color: var(--oraculo-primary);
+  background: var(--oraculo-primary-dark);
   color: #fff;
 }
 
