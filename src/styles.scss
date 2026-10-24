@@ -1,61 +1,66 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 
+:root {
+  --oraculo-primary: #6222ee;
+  --oraculo-primary-dark: #4516b8;
+  --oraculo-primary-soft: #f1ebff;
+  --oraculo-accent: #ffdd00;
+  --oraculo-accent-warm: #f7c92f;
+  --oraculo-success: #00b081;
+  --oraculo-ink: #1b1721;
+  --oraculo-muted: #726c7a;
+  --oraculo-surface: #ffffff;
+  --oraculo-surface-soft: #f8f6fb;
+  --oraculo-border: #e9e3f1;
+  --oraculo-shadow: 0 16px 40px rgba(31, 22, 43, 0.1);
+}
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
   width: 100%;
-  height: 100%;
-  font-family: "Noto Sans", serif;
+  min-height: 100%;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.mat-h2,
-.mat-headline-6,
-.mat-typography .mat-h2,
-.mat-typography .mat-headline-6,
-.mat-typography h2,
-h1 {
-  margin: 0;
+body {
+  color: var(--oraculo-ink);
+  background: var(--oraculo-surface-soft);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(98, 34, 238, 0.32);
+  outline-offset: 3px;
 }
 
 .mat-mdc-button,
 .mat-mdc-outlined-button {
-  --mat-mdc-button-persistent-ripple-color: none;
-  --mat-mdc-button-ripple-color: hsla(210, 50%, 40%, 0.1);
-}
-@media (max-width: 1200px) {
-  .movie-card {
-    width: 250px;
-  }
-
-  .banner {
-    padding: 3rem 0;
-  }
-
-  .nav-links {
-    font-size: 0.9rem;
-  }
-
-  .footer {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .banner .container {
-    width: 90%;
-  }
-
-  .movie-card {
-    width: 200px;
-  }
-
-  .footer {
-    padding: 0.5rem;
-  }
+  --mat-mdc-button-persistent-ripple-color: transparent;
+  --mat-mdc-button-ripple-color: rgba(98, 34, 238, 0.08);
 }

@@ -1,61 +1,126 @@
-/* Estilos gerais do toolbar e layout desktop (mantidos como estão) */
-.mat-toolbar {
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
   padding: 0;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--oraculo-border);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(31, 22, 43, 0.05);
 }
 
-.container {
+.desktop-toolbar {
+  min-height: 72px;
+}
+
+.nav-shell {
+  width: min(1180px, calc(100% - 40px));
+  height: 72px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
+  gap: 28px;
 }
 
-.background-image {
-  height: 1rem;
+.brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
 }
 
-.example-spacer {
+.brand img {
+  display: block;
+  width: auto;
+  height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 14px;
+}
+
+.nav-links a {
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #514b58;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--oraculo-primary);
+  background: var(--oraculo-primary-soft);
+}
+
+.ebook-btn.mat-mdc-raised-button {
+  margin-left: auto;
+  min-width: 132px;
+  background: var(--oraculo-accent);
+  color: var(--oraculo-primary-dark);
+  font-weight: 800;
+  box-shadow: none;
+}
+
+.ebook-btn.mat-mdc-raised-button:hover {
+  background: var(--oraculo-accent-warm);
+}
+
+.mobile-toolbar {
+  min-height: 62px;
+  padding: 0 12px;
+}
+
+.menu-trigger {
+  min-width: 44px;
+  padding: 0;
+  color: var(--oraculo-primary);
+}
+
+.mobile-brand {
+  margin-left: 6px;
+  color: var(--oraculo-ink);
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mobile-spacer {
   flex: 1 1 auto;
 }
 
-.mat-mdc-button,
-.mat-mdc-outlined-button {
-  --mat-mdc-button-ripple-color: none;
+.ebook-btn--mobile.mat-mdc-raised-button {
+  min-width: 82px;
+  padding: 0 14px;
 }
 
-.no-underline {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s ease, color 0.3s ease;
+.download-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  background: rgba(20, 14, 28, 0.66);
+  backdrop-filter: blur(4px);
 }
 
-.no-underline:hover {
-  color: #6222ee;
-  transform: scale(1.1);
-}
+@media (max-width: 900px) {
+  .nav-shell {
+    width: min(100% - 28px, 1180px);
+    gap: 16px;
+  }
 
-.mat-mdc-raised-button.mat-unthemed {
-  --mdc-protected-button-container-color: #6222ee;
-  --mdc-protected-button-label-text-color: #fff;
-}
+  .nav-links {
+    gap: 2px;
+    margin-left: 0;
+  }
 
-.mat-mdc-raised-button.mat-unthemed:hover {
-  color: #fff;
-}
-
-
-.menu-no-underline {
-  text-decoration: none;
-  color: inherit;
-}
-
-.menu-btn{
-    background-color: #ffdd00;
-    color: #6222ee;
-}
-
-@media (max-width: 768px) {
-  .sidenav {
-    position: fixed;
-    z-index: 1000;
+  .nav-links a {
+    padding-inline: 8px;
+    font-size: 0.82rem;
   }
 }

@@ -1,95 +1,136 @@
-.banner {
+.hero {
   position: relative;
-  background-color: #808080;
-  padding:  1.5rem 0;
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/assets/back.webp') no-repeat center center;
-    background-size: cover;
-    filter: brightness(0.5); /* Escurece a imagem */
-  
-  }
+  min-height: 410px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #241437 url('/assets/back.webp') center / cover no-repeat;
 }
 
-.container {
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 221, 0, 0.22), transparent 24%),
+    linear-gradient(105deg, rgba(22, 13, 31, 0.94) 10%, rgba(69, 22, 184, 0.84) 58%, rgba(30, 17, 44, 0.72));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(980px, calc(100% - 40px));
+  padding: 68px 0;
   text-align: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  z-index: 2;
+  color: #fff;
+}
+
+.hero-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 h1 {
-  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
   color: #fff;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  margin-bottom: .8rem;
-  line-height: 1.2;
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.055em;
 }
 
-p {
-  z-index: 2;
-  color: #fff;
-  font-size: 1.3rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  margin-bottom: 1.2rem;
-  line-height: 1.2;
+.hero-content > p {
+  max-width: 680px;
+  margin: 20px auto 28px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.65;
 }
 
-.youtube-animated-button {
-  z-index: 2;
-  background-color: #ff0000;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 1rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  animation: pulse 2s infinite ease-in-out;
-  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-}
-
-/* Animação de pulsação */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0px 10px 20px rgba(255, 0, 0, 0.8);
-  }
-}
-
-/* Estilo do link para evitar sublinhados */
-a {
+.hero-cta {
+  width: min(100%, 470px);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 15px 20px;
+  border-radius: 16px;
+  background: var(--oraculo-accent);
+  color: var(--oraculo-primary-dark);
   text-decoration: none;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Estilização da mensagem fixa na parte inferior */
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+.hero-cta-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.hero-cta strong {
+  font-size: 0.96rem;
+  line-height: 1.35;
+}
+
+.support-wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin: -24px auto 0;
+  position: relative;
+  z-index: 2;
+}
+
 .support-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 14px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  border: 1px solid var(--oraculo-border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--oraculo-shadow);
+  color: var(--oraculo-muted);
+  font-size: 0.88rem;
   text-align: center;
-    font-style: italic;
-    font-size: 1rem;
-    color: #686868;
-    padding: 0.5rem 1rem;
-    font-weight: 500;
-    margin: .5rem 0;
-    line-height: 1.6;
+}
+
+.support-message strong {
+  color: var(--oraculo-ink);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 360px;
   }
-  
-  @media (max-width: 768px) {
-    .support-message {
-        font-size: .8rem;
-        line-height: 1;
-      }
-   }
+
+  .hero-content {
+    width: min(100% - 28px, 980px);
+    padding: 54px 0 66px;
+  }
+
+  .support-wrap {
+    width: min(100% - 24px, 1180px);
+    margin-top: -22px;
+  }
+
+  .support-message {
+    padding: 16px;
+    line-height: 1.5;
+  }
+}

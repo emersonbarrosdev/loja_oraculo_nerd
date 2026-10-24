@@ -1,86 +1,24 @@
-<!-- <mat-toolbar class="toolbar">
-  <div class="container">
-    <button mat-button class="example-button-row me-5">
-      <img src="assets/oraculo_logo.png" class="background-image" />
-    </button>
-    <button mat-button class="example-button-row me-4 no-underline">
-      <a
-        href="https://www.youtube.com/@oficialoraculo"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="no-underline"
-      >
-        Canal YouTube com 3k+
-      </a>
-    </button>
-    <button mat-button class="example-button-row me-4 no-underline">
-      <a
-        href="https://www.instagram.com/_oraculonerd/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="no-underline"
-      >
-        Meu Instagram
-      </a>
-    </button>
-    <button mat-button class="example-button-row me-4 no-underline">
-      <a
-        href="https://open.spotify.com/playlist/6Wsa6VHwhtVhr1oiBdatcw?si=9dd29bbfa24842f0"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="no-underline"
-      >
-        Minha Playlist Spotify
-      </a>
-    </button>
-    <span class="example-spacer"></span>
-    <button mat-raised-button class="example-button-row me-4 no-underline" (click)="startDownload(loadingSpinner)">
-      Baixar E-book
-    </button>
-
-    <ng-template #loadingSpinner>
-      <div class="overlay">
-        <mat-spinner diameter="200"></mat-spinner>
-      </div>
-    </ng-template>
-    <button mat-button class="example-button-row me-4 no-underline">
-      <a
-        href="http://hotm.art/sRe0Uqy"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="no-underline"
-      >
-        Ingês com a Gringa
-      </a>
-    </button>
-  </div>
-</mat-toolbar> -->
-
 <app-header></app-header>
 
-<div class="banner">
-  <div class="overlay"></div>
-  <div class="container">
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-kicker">Cultura geek, curiosidades e achados</span>
     <h1>Bem-vindo ao Oráculo Nerd</h1>
-    <p>Descubra curiosidades incríveis sobre o universo nerd!</p>
+    <p>Descubra curiosidades incríveis e produtos selecionados para quem vive o universo nerd.</p>
 
-    <!-- Botão animado para o vídeo sobre os Maias -->
-    <a
-      href="https://www.youtube.com/watch?v=ROGbFUrIMGo"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <div class="youtube-animated-button">
-        Assista: 6 Mortes Mais Impactantes de Round 6
-      </div>
+    <a class="hero-cta" href="https://www.youtube.com/watch?v=ROGbFUrIMGo" target="_blank" rel="noopener noreferrer">
+      <span class="hero-cta-label">Destaque no YouTube</span>
+      <strong>6 Mortes Mais Impactantes de Round 6</strong>
     </a>
   </div>
-</div>
+</section>
 
-<!-- Mensagem de apoio -->
-<div class="support-message">
-  Ao comprar pelos links abaixo, recebo uma pequena comissão sem custo extra
-  para você, ajudando a trazer mais conteúdo. Obrigado pelo apoio!
+<div class="support-wrap">
+  <div class="support-message">
+    <strong>Você apoia o Oráculo Nerd comprando pelos links da loja.</strong>
+    <span>Posso receber uma pequena comissão, sem custo extra para você.</span>
+  </div>
 </div>
 
 <app-project></app-project>
