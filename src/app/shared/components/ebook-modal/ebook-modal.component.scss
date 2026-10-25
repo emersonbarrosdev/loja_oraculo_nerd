@@ -49,7 +49,7 @@
 
 .close-glyph::before,
 .close-glyph::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 7px;
   left: 1px;
@@ -70,18 +70,20 @@
 
 .modal-content {
   display: grid;
-  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.28fr);
-  gap: 36px;
+  grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.22fr);
+  gap: 42px;
   align-items: center;
-  padding: 50px 54px;
+  padding: 50px 58px;
 }
 
 .image-container {
-  position: relative;
-  min-height: 340px;
-  display: grid;
-  place-items: center;
-  padding: 24px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 24px 26px;
   border: 1px solid var(--oraculo-border);
   border-radius: 14px;
   background:
@@ -90,9 +92,9 @@
 }
 
 .image-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
+  position: static;
+  align-self: flex-start;
+  margin: 0;
   padding: 6px 9px;
   border: 1px solid rgba(255, 221, 0, 0.22);
   border-radius: 999px;
@@ -100,6 +102,7 @@
   color: #f6e875;
   font-size: 0.66rem;
   font-weight: 600;
+  line-height: 1;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -107,6 +110,7 @@
 .ebook-image {
   width: min(100%, 210px);
   height: auto;
+  display: block;
   filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.34));
 }
 
@@ -115,9 +119,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-right: 6px;
 }
 
 .modal-eyebrow {
+  max-width: calc(100% - 56px);
   margin-bottom: 12px;
   color: var(--oraculo-accent);
   font-size: 0.69rem;
@@ -128,14 +134,16 @@
 }
 
 .title {
-  max-width: 470px;
+  max-width: 500px;
   margin: 0;
   color: #f7f3fa;
-  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 2.6vw, 1.95rem);
   font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.035em;
-  text-wrap: balance;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: pretty;
 }
 
 .description {
@@ -176,16 +184,19 @@
   font-size: 0.7rem;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .modal-content {
-    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 1.32fr);
+    grid-template-columns: minmax(200px, 0.72fr) minmax(0, 1.28fr);
     gap: 28px;
     padding: 48px 40px;
   }
 
+  .image-container {
+    min-height: 310px;
+  }
+
   .title {
-    font-size: clamp(1.45rem, 4vw, 1.8rem);
-    line-height: 1.2;
+    font-size: clamp(1.4rem, 4vw, 1.75rem);
   }
 }
 
@@ -197,8 +208,12 @@
   }
 
   .image-container {
-    min-height: 235px;
-    padding: 22px;
+    min-height: 245px;
+    padding: 18px 20px 22px;
+  }
+
+  .image-badge {
+    align-self: center;
   }
 
   .ebook-image {
@@ -207,6 +222,11 @@
 
   .text-container {
     align-items: stretch;
+    padding-right: 0;
+  }
+
+  .modal-eyebrow {
+    max-width: none;
   }
 
   .modal-eyebrow,
@@ -218,6 +238,7 @@
 
   .title {
     max-width: none;
-    font-size: clamp(1.5rem, 8vw, 1.9rem);
+    font-size: clamp(1.45rem, 7vw, 1.85rem);
+    line-height: 1.22;
   }
 }
