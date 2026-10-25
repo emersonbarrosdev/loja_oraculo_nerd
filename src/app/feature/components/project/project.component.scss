@@ -130,7 +130,7 @@
 
 .catalog-layout {
   display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 40px;
   align-items: start;
 }
@@ -145,7 +145,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
-  color: #d6cedc;
+  color: #ded6e4;
   font-size: 0.76rem;
   font-weight: 600;
 }
@@ -170,9 +170,9 @@
 }
 
 ::ng-deep .categories-panel .mat-expansion-panel {
-  border: 1px solid var(--oraculo-border);
-  border-radius: 9px !important;
-  background: var(--oraculo-surface-raised);
+  border: 1px solid #3a3142;
+  border-radius: 10px !important;
+  background: #17131c;
   box-shadow: none !important;
 }
 
@@ -181,37 +181,80 @@
   padding: 0 14px;
 }
 
+::ng-deep .categories-panel .mat-expansion-panel-header:hover {
+  background: rgba(162, 123, 255, 0.04) !important;
+}
+
 ::ng-deep .categories-panel .mat-expansion-panel-body {
-  padding: 0 14px 14px;
+  padding: 4px 10px 12px;
 }
 
 ::ng-deep .categories-panel .mat-expansion-panel-header-title {
-  color: var(--oraculo-ink);
+  color: #f1ebf5;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+::ng-deep .categories-panel .mat-expansion-indicator::after {
+  color: #a99caf;
 }
 
 .category-list {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 2px;
 }
 
 ::ng-deep .category-list .mat-mdc-checkbox {
-  min-height: 38px;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 7px;
+  transition: background 0.16s ease;
+}
+
+::ng-deep .category-list .mat-mdc-checkbox:hover {
+  background: rgba(162, 123, 255, 0.055);
+}
+
+::ng-deep .category-list .mdc-form-field {
+  width: 100%;
 }
 
 ::ng-deep .category-list .mdc-label {
-  color: #b8b0bd;
-  font-size: 0.8rem;
+  color: #c6bdcc !important;
+  font-size: 0.81rem;
   font-weight: 400;
+  line-height: 1.35;
 }
 
-::ng-deep .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
-::ng-deep .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
-::ng-deep .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate="true"]:enabled ~ .mdc-checkbox__background {
-  border-color: var(--oraculo-primary) !important;
-  background: var(--oraculo-primary-dark) !important;
+::ng-deep .category-list .mdc-checkbox__background {
+  border-width: 2px !important;
+  border-color: #776b82 !important;
+  background: transparent !important;
+}
+
+::ng-deep .category-list .mat-mdc-checkbox:hover .mdc-checkbox__background {
+  border-color: #b69cff !important;
+}
+
+::ng-deep .category-list .mdc-checkbox__native-control:focus-visible ~ .mdc-checkbox__background {
+  border-color: #c8b4ff !important;
+  box-shadow: 0 0 0 3px rgba(162, 123, 255, 0.16);
+}
+
+::ng-deep .category-list .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
+::ng-deep .category-list .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
+::ng-deep .category-list .mdc-checkbox__native-control[data-indeterminate="true"]:enabled ~ .mdc-checkbox__background {
+  border-color: #9b72ff !important;
+  background: #7c3aed !important;
+}
+
+::ng-deep .category-list .mdc-checkbox__checkmark {
+  color: #ffffff !important;
+}
+
+::ng-deep .category-list .mdc-checkbox__checkmark-path {
+  stroke: #ffffff !important;
 }
 
 .catalog-content {
@@ -333,11 +376,19 @@
   .filters-column {
     position: static;
   }
+
+  ::ng-deep .categories-panel .mat-expansion-panel-body {
+    padding-inline: 12px;
+  }
 }
 
 @media (max-width: 560px) {
   .product-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .catalog-shell {
+    width: min(100% - 24px, 1220px);
   }
 }
