@@ -27,8 +27,11 @@
 .mobile-brand {
   display: flex;
   align-items: center;
-  flex: 0 0 auto;
   border-radius: 6px;
+}
+
+.brand {
+  flex: 0 0 auto;
 }
 
 .brand img {
@@ -98,10 +101,12 @@
 
 .mobile-toolbar {
   min-height: 58px;
-  padding: 0 12px;
+  padding: 0 10px;
+  gap: 6px;
 }
 
 .menu-trigger.mat-mdc-button {
+  flex: 0 0 44px;
   min-width: 44px;
   min-height: 44px;
   padding: 0;
@@ -109,21 +114,30 @@
 }
 
 .mobile-brand {
-  margin-left: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-left: 0;
+  overflow: hidden;
 }
 
 .mobile-brand img {
+  display: block;
   width: auto;
-  height: 24px;
+  max-width: min(148px, 100%);
+  height: auto;
+  max-height: 22px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .mobile-spacer {
-  flex: 1 1 auto;
+  display: none;
 }
 
 .ebook-btn--mobile.mat-mdc-button {
+  flex: 0 0 auto;
   margin-left: 0;
-  padding: 0 8px;
+  padding: 0 6px;
 }
 
 .download-overlay {
@@ -144,5 +158,16 @@
 
   .nav-links {
     gap: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ebook-btn--mobile.mat-mdc-button {
+    display: none;
+  }
+
+  .mobile-brand img {
+    max-width: min(170px, 100%);
+    max-height: 23px;
   }
 }
