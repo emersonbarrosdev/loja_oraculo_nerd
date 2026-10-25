@@ -10,10 +10,22 @@
       <a href="https://open.spotify.com/playlist/6Wsa6VHwhtVhr1oiBdatcw?si=9dd29bbfa24842f0" target="_blank" rel="noopener noreferrer">Spotify</a>
     </nav>
 
-    <button mat-button class="ebook-btn" (click)="startDownload()">
-      Baixar E-book
-      <span aria-hidden="true">↗</span>
-    </button>
+    <div class="header-actions">
+      <button
+        type="button"
+        class="theme-toggle"
+        [attr.aria-label]="themeLabel"
+        [attr.title]="themeLabel"
+        (click)="toggleTheme()"
+      >
+        <mat-icon aria-hidden="true">{{ theme === 'dark' ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+
+      <button mat-button class="ebook-btn" (click)="startDownload()">
+        Baixar E-book
+        <span aria-hidden="true">↗</span>
+      </button>
+    </div>
   </div>
 </mat-toolbar>
 
@@ -26,9 +38,19 @@
     <img src="assets/oraculo_logo.png" alt="Oráculo Nerd" />
   </a>
 
-  <span class="mobile-spacer"></span>
+  <div class="mobile-actions">
+    <button
+      type="button"
+      class="theme-toggle theme-toggle--mobile"
+      [attr.aria-label]="themeLabel"
+      [attr.title]="themeLabel"
+      (click)="toggleTheme()"
+    >
+      <mat-icon aria-hidden="true">{{ theme === 'dark' ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
 
-  <button mat-button class="ebook-btn ebook-btn--mobile" (click)="startDownload()">E-book</button>
+    <button mat-button class="ebook-btn ebook-btn--mobile" (click)="startDownload()">E-book</button>
+  </div>
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
