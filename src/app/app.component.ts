@@ -28,11 +28,13 @@ export class AppComponent implements OnInit {
 
   openEbookModal(): void {
     this.dialog.open(EbookModalComponent, {
-      width: '760px',
-      maxWidth: 'calc(100vw - 32px)',
+      width: '860px',
+      maxWidth: 'calc(100vw - 24px)',
       panelClass: 'ebook-dialog-panel',
       backdropClass: 'ebook-dialog-backdrop',
       disableClose: false,
+      autoFocus: false,
+      restoreFocus: true,
     });
   }
 }
