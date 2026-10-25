@@ -1,6 +1,6 @@
 .product-card {
   width: 100%;
-  min-height: 418px;
+  min-height: 428px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -44,7 +44,17 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 18px 18px 17px;
+  padding: 17px 18px;
+}
+
+.product-code {
+  display: block;
+  margin-bottom: 6px;
+  color: #766f7d;
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
 }
 
 mat-card-title {
@@ -111,7 +121,7 @@ mat-card-actions {
 
 @media (max-width: 560px) {
   .product-card {
-    min-height: 400px;
+    min-height: 410px;
   }
 
   .product-image-wrap {
