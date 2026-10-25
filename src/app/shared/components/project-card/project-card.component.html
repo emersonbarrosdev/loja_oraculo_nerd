@@ -9,6 +9,8 @@
   </div>
 
   <div class="product-info">
+    <span class="product-code" *ngIf="project?.id">cod.: {{ project.id }}</span>
+
     <mat-card-title
       [matTooltip]="project?.title.length > 45 ? project?.title : null"
       [matTooltipPosition]="'above'"
