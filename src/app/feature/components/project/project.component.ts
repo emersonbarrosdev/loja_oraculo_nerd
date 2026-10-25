@@ -102,8 +102,9 @@ export class ProjectComponent implements OnInit {
 
     this.filteredProjectData = this.projectData.filter((project) => {
       const matchesSearch =
-        project.title.toLowerCase().includes(searchQuery) ||
-        project.description.toLowerCase().includes(searchQuery);
+        String(project.id || '').includes(searchQuery) ||
+        (project.title || '').toLowerCase().includes(searchQuery) ||
+        (project.description || '').toLowerCase().includes(searchQuery);
 
       const matchesCategory =
         this.selectedCategories.size === 0 ||
