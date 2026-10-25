@@ -4,10 +4,11 @@
   z-index: 1000;
   width: 100%;
   padding: 0;
-  background: rgba(15, 13, 18, 0.9);
-  border-bottom: 1px solid rgba(67, 57, 76, 0.72);
+  background: var(--oraculo-header);
+  border-bottom: 1px solid var(--oraculo-border);
   backdrop-filter: blur(18px) saturate(125%);
   box-shadow: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .desktop-toolbar {
@@ -51,7 +52,7 @@
   min-height: 44px;
   display: inline-flex;
   align-items: center;
-  color: #aaa2b2;
+  color: var(--oraculo-muted);
   font-size: 0.82rem;
   font-weight: 500;
   text-decoration: none;
@@ -72,15 +73,54 @@
 }
 
 .nav-links a:hover {
-  color: #e6dcff;
+  color: var(--oraculo-ink);
 }
 
 .nav-links a:hover::after {
   transform: scaleX(1);
 }
 
-.ebook-btn.mat-mdc-button {
+.header-actions,
+.mobile-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions {
   margin-left: auto;
+  gap: 10px;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  padding: 0;
+  border: 1px solid var(--oraculo-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--oraculo-muted);
+  cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.theme-toggle mat-icon {
+  width: 19px;
+  height: 19px;
+  font-size: 19px;
+  line-height: 19px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--oraculo-border-strong);
+  background: var(--oraculo-primary-soft);
+  color: var(--oraculo-primary);
+  transform: translateY(-1px);
+}
+
+.ebook-btn.mat-mdc-button {
   min-width: auto;
   min-height: 44px;
   padding: 0 4px;
@@ -91,7 +131,7 @@
 }
 
 .ebook-btn:hover {
-  color: #fff07a;
+  filter: brightness(1.08);
 }
 
 .ebook-btn span {
@@ -130,8 +170,15 @@
   object-position: left center;
 }
 
-.mobile-spacer {
-  display: none;
+.mobile-actions {
+  flex: 0 0 auto;
+  gap: 4px;
+}
+
+.theme-toggle--mobile {
+  width: 38px;
+  height: 38px;
+  flex-basis: 38px;
 }
 
 .ebook-btn--mobile.mat-mdc-button {
@@ -161,7 +208,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 390px) {
   .ebook-btn--mobile.mat-mdc-button {
     display: none;
   }
