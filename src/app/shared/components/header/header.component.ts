@@ -78,6 +78,10 @@ export class HeaderComponent implements OnInit {
   private applyTheme(theme: StoreTheme, persist = true): void {
     this.theme = theme;
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.style.colorScheme = theme;
+
+    const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    themeColor?.setAttribute('content', theme === 'dark' ? '#0f0d12' : '#f7f5f9');
 
     if (persist) {
       localStorage.setItem('oraculo-theme', theme);
