@@ -11,11 +11,11 @@ import { HomeComponent } from './feature/components/home/home.component';
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [
-      CommonModule,
-      ProjectComponent,
-      HomeComponent,
-      MatDialogModule
-    ],
+    CommonModule,
+    ProjectComponent,
+    HomeComponent,
+    MatDialogModule
+  ],
 })
 export class AppComponent implements OnInit {
   title = 'oraculo-nerd';
@@ -28,7 +28,10 @@ export class AppComponent implements OnInit {
 
   openEbookModal(): void {
     this.dialog.open(EbookModalComponent, {
-      width: '700px',
+      width: '760px',
+      maxWidth: 'calc(100vw - 32px)',
+      panelClass: 'ebook-dialog-panel',
+      backdropClass: 'ebook-dialog-backdrop',
       disableClose: false,
     });
   }

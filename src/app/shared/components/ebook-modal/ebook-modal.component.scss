@@ -1,133 +1,170 @@
 .modal-container {
   position: relative;
-  display: flex;
-  flex-direction: column; /* Para organizar o botão X no topo e o conteúdo abaixo */
   overflow: hidden;
-
-  max-width: 900px; /* Limita a largura do modal */
-  margin: auto; /* Centraliza o modal na tela */
+  background:
+    radial-gradient(circle at 88% 8%, rgba(162, 123, 255, 0.12), transparent 250px),
+    #141118;
+  color: var(--oraculo-ink);
 }
 
-.close-btn {
+.close-btn.mat-mdc-icon-button {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  background: transparent;
-  border: none;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 1;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #42394a;
+  border-radius: 50%;
+  background: #24202a;
+  color: #f7f3fa;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
 
-.mat-mdc-icon-button .mat-mdc-button-touch-target {
-  background: none;
+.close-btn.mat-mdc-icon-button:hover {
+  border-color: #6c5a79;
+  background: #302936;
+  transform: translateY(-1px);
 }
 
-.close-btn:focus {
-  outline: none;
+.close-btn mat-icon {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  line-height: 22px;
 }
 
 .modal-content {
-  display: flex; /* Coloca as colunas lado a lado */
-  flex-direction: row; /* Direção horizontal */
-  gap: 10px; /* Espaçamento entre as colunas */
-  align-items: center; /* Centraliza verticalmente o conteúdo */
-  padding: 50px;
-  padding-right: 80px;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.85fr) minmax(0, 1.15fr);
+  gap: 46px;
+  align-items: center;
+  padding: 54px 58px;
 }
 
 .image-container {
-  flex: 0 0 50%; /* Ocupa 50% da largura */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  min-height: 350px;
+  display: grid;
+  place-items: center;
+  padding: 26px;
+  border: 1px solid var(--oraculo-border);
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, rgba(162, 123, 255, 0.08), rgba(255, 221, 0, 0.035)),
+    #0f0d12;
+}
+
+.image-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255, 221, 0, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 221, 0, 0.07);
+  color: #f6e875;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .ebook-image {
-  width: 100%; /* Garante que a imagem ocupe todo o espaço da coluna */
-  max-width: 80%;
+  width: min(100%, 220px);
+  height: auto;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.34));
 }
 
 .text-container {
-  flex: 0 0 50%; /* Ocupa 50% da largura */
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza verticalmente o conteúdo */
-  text-align: left;
+  align-items: flex-start;
+}
+
+.modal-eyebrow {
+  margin-bottom: 12px;
+  color: var(--oraculo-accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
 .title {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #ff9800;
-}
-
-.subtitle {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #4a1c68;
+  margin: 0;
+  color: #f7f3fa;
+  font-size: clamp(1.65rem, 3.6vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
 }
 
 .description {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  color: #555555;
+  margin: 20px 0 26px;
+  color: #b7afbd;
+  font-size: 0.92rem;
+  line-height: 1.75;
 }
 
-.download-btn {
-  background-color: #ff9800;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.modal-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.download-btn:hover {
-  background-color: #e08900;
-  color: white;
+.download-btn.mat-mdc-unelevated-button {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  background: var(--oraculo-primary-dark);
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  box-shadow: none;
 }
 
+.download-btn.mat-mdc-unelevated-button:hover {
+  background: #8b5cf6;
+}
 
-@media (max-width: 768px) {
+.download-note {
+  color: #817887;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 680px) {
   .modal-content {
-    flex-direction: column; /* Muda a direção para vertical */
-    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 72px 22px 28px;
   }
 
   .image-container {
-    flex: 0 0 auto;
-    width: 40%; /* A imagem ocupará 41% da largura disponível */
-    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona espaçamento abaixo */
+    min-height: 245px;
+    padding: 22px;
   }
 
   .ebook-image {
-    width: 100%; /* Garante que a imagem não ultrapasse os 41% da largura do container */
-    height: auto; /* Mantém a proporção da imagem */
+    width: min(60vw, 180px);
   }
 
   .text-container {
-    flex: 0 0 auto;
-    width: 100%; /* Garante que o texto ocupe toda a largura restante */
-    text-align: center; /* Centraliza o texto */
+    align-items: stretch;
   }
 
-  .title, .subtitle {
-    font-size: 1.3em; /* Ajusta os tamanhos da fonte para telas menores */
-  }
-
-  .description {
-    font-size: 1em;
-  }
-
-  .download-btn {
-    padding: 8px 16px;
-    font-size: 1em;
+  .modal-eyebrow,
+  .title,
+  .description,
+  .download-note {
+    text-align: left;
   }
 }

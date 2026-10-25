@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { ScrollButtonComponent } from 'src/app/shared/components/scroll-button/scroll-button.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
@@ -23,8 +23,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ScrollButtonComponent,
     MatCardModule,
     MatCheckboxModule,
-    ReactiveFormsModule,
-    FormsModule,
     MatInputModule,
     MatExpansionModule
   ],
@@ -38,41 +36,38 @@ export class ProjectComponent implements OnInit {
   public selectedCategories: Set<string> = new Set();
   isMobile: boolean = false;
 
-  // Adicione as categorias disponíveis aqui
-  public categories: string[] = ['Livros', 'Mangás', 'Eletrônicos', 'Fitness', 'Beleza', 'Saúde', 'Jogos', 'Tecnologia', 'Papelaria', 'Casa', 'Pet Shop', 'Roupas e Acessórios', 'Móveis e Decoração', 'Outros'];
+  public categories: string[] = [
+    'Livros', 'Mangás', 'Eletrônicos', 'Fitness', 'Beleza', 'Saúde', 'Jogos',
+    'Tecnologia', 'Papelaria', 'Casa', 'Pet Shop', 'Roupas e Acessórios',
+    'Móveis e Decoração', 'Outros'
+  ];
 
   constructor(private googleSheetsService: GoogleSheetsService) {}
 
   ngOnInit(): void {
     this.checkViewport();
-
     this.getProject();
 
-    this.searchControl.valueChanges.subscribe((query: string) => {
-      const normalizedQuery = query?.toLowerCase().trim() || '';
-      this.filteredProjectData = this.projectData.filter(
-        (project) =>
-          project.title.toLowerCase().includes(normalizedQuery) ||
-          project.description.toLowerCase().includes(normalizedQuery)
-      );
+    this.searchControl.valueChanges.subscribe(() => {
+      this.applyFilters();
     });
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
+  @HostListener('window:resize')
+  onResize(): void {
     this.checkViewport();
   }
 
-  private checkViewport() {
+  private checkViewport(): void {
     this.isMobile = window.innerWidth <= 768;
   }
 
-  getProject() {
+  getProject(): void {
     this.showLoading = true;
     this.googleSheetsService.getProjects().subscribe({
       next: (resp) => {
+        this.showLoading = false;
         if (resp) {
-          this.showLoading = false;
           this.projectData = resp.reverse();
           this.filteredProjectData = [...this.projectData];
         }
@@ -96,21 +91,27 @@ export class ProjectComponent implements OnInit {
     this.applyFilters();
   }
 
+  clearFilters(): void {
+    this.selectedCategories.clear();
+    this.searchControl.setValue('');
+    this.applyFilters();
+  }
 
   applyFilters(): void {
     const searchQuery = this.searchControl.value?.toLowerCase().trim() || '';
-  
+
     this.filteredProjectData = this.projectData.filter((project) => {
-      const matchesSearch = project.title.toLowerCase().includes(searchQuery) || 
-                            project.description.toLowerCase().includes(searchQuery);
-  
-      const matchesCategory = this.selectedCategories.size === 0 || 
-        Array.from(this.selectedCategories).some(category => 
+      const matchesSearch =
+        project.title.toLowerCase().includes(searchQuery) ||
+        project.description.toLowerCase().includes(searchQuery);
+
+      const matchesCategory =
+        this.selectedCategories.size === 0 ||
+        Array.from(this.selectedCategories).some((category) =>
           project.categories?.includes(category)
         );
-  
+
       return matchesSearch && matchesCategory;
     });
   }
-  
 }

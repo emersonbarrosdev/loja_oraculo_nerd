@@ -4,9 +4,9 @@
   z-index: 1000;
   width: 100%;
   padding: 0;
-  background: rgba(15, 13, 18, 0.94);
-  border-bottom: 1px solid var(--oraculo-border);
-  backdrop-filter: blur(14px);
+  background: rgba(15, 13, 18, 0.9);
+  border-bottom: 1px solid rgba(67, 57, 76, 0.72);
+  backdrop-filter: blur(18px) saturate(125%);
   box-shadow: none;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .nav-shell {
-  width: min(1200px, calc(100% - 48px));
+  width: min(1220px, calc(100% - 48px));
   height: 64px;
   margin: 0 auto;
   display: flex;
@@ -23,10 +23,12 @@
   gap: 34px;
 }
 
-.brand {
+.brand,
+.mobile-brand {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
+  border-radius: 6px;
 }
 
 .brand img {
@@ -43,8 +45,10 @@
 
 .nav-links a {
   position: relative;
-  padding: 22px 0 20px;
-  color: #a59eac;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: #aaa2b2;
   font-size: 0.82rem;
   font-weight: 500;
   text-decoration: none;
@@ -56,7 +60,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 13px;
+  bottom: 7px;
   height: 1px;
   background: var(--oraculo-primary);
   transform: scaleX(0);
@@ -65,7 +69,7 @@
 }
 
 .nav-links a:hover {
-  color: #d8caff;
+  color: #e6dcff;
 }
 
 .nav-links a:hover::after {
@@ -75,11 +79,16 @@
 .ebook-btn.mat-mdc-button {
   margin-left: auto;
   min-width: auto;
-  padding: 0 2px;
+  min-height: 44px;
+  padding: 0 4px;
   color: var(--oraculo-accent);
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+}
+
+.ebook-btn:hover {
+  color: #fff07a;
 }
 
 .ebook-btn span {
@@ -92,15 +101,14 @@
   padding: 0 12px;
 }
 
-.menu-trigger {
-  min-width: 42px;
+.menu-trigger.mat-mdc-button {
+  min-width: 44px;
+  min-height: 44px;
   padding: 0;
   color: var(--oraculo-ink);
 }
 
 .mobile-brand {
-  display: flex;
-  align-items: center;
   margin-left: 4px;
 }
 
@@ -124,13 +132,13 @@
   z-index: 2000;
   display: grid;
   place-items: center;
-  background: rgba(6, 5, 8, 0.82);
-  backdrop-filter: blur(3px);
+  background: rgba(6, 5, 8, 0.84);
+  backdrop-filter: blur(5px);
 }
 
 @media (max-width: 900px) {
   .nav-shell {
-    width: min(100% - 32px, 1200px);
+    width: min(100% - 32px, 1220px);
     gap: 22px;
   }
 

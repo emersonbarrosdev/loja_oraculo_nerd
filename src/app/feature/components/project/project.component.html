@@ -7,19 +7,49 @@
     </div>
   </div>
 
-  <div class="search-bar">
-    <label for="product-search">Buscar produtos</label>
-    <input
-      id="product-search"
-      type="search"
-      [formControl]="searchControl"
-      placeholder="Ex.: action figure, livro, acessório..."
-      autocomplete="off"
-    />
+  <div class="catalog-tools">
+    <div class="search-bar">
+      <label for="product-search">Buscar produtos</label>
+      <div class="search-control">
+        <input
+          id="product-search"
+          type="search"
+          [formControl]="searchControl"
+          placeholder="Ex.: action figure, livro, acessório..."
+          autocomplete="off"
+        />
+        <button
+          *ngIf="searchControl.value"
+          class="clear-search"
+          type="button"
+          aria-label="Limpar busca"
+          (click)="searchControl.setValue('')"
+        >
+          ×
+        </button>
+      </div>
+    </div>
+
+    <div class="results-meta" aria-live="polite">
+      <strong>{{ filteredProjectData.length }}</strong>
+      <span>{{ filteredProjectData.length === 1 ? 'produto' : 'produtos' }}</span>
+    </div>
   </div>
 
   <div class="catalog-layout">
-    <aside class="filters-column">
+    <aside class="filters-column" aria-label="Filtros de produtos">
+      <div class="filter-topline">
+        <span>Filtros</span>
+        <button
+          *ngIf="searchControl.value || selectedCategories.size > 0"
+          type="button"
+          class="clear-filters"
+          (click)="clearFilters()"
+        >
+          Limpar
+        </button>
+      </div>
+
       <mat-accordion class="categories-panel">
         <mat-expansion-panel [expanded]="!isMobile">
           <mat-expansion-panel-header>
@@ -27,7 +57,12 @@
           </mat-expansion-panel-header>
 
           <div class="category-list">
-            <mat-checkbox *ngFor="let category of categories" [value]="category" (change)="toggleCategory($event)">
+            <mat-checkbox
+              *ngFor="let category of categories"
+              [value]="category"
+              [checked]="selectedCategories.has(category)"
+              (change)="toggleCategory($event)"
+            >
               {{ category }}
             </mat-checkbox>
           </div>
@@ -36,8 +71,8 @@
     </aside>
 
     <section class="catalog-content">
-      <div class="loading-container" *ngIf="showLoading; else projectList">
-        <div class="loading-spinner"></div>
+      <div class="loading-container" *ngIf="showLoading; else projectList" role="status">
+        <div class="loading-spinner" aria-hidden="true"></div>
         <span>Carregando produtos...</span>
       </div>
 
@@ -50,8 +85,10 @@
 
         <ng-template #noResults>
           <div class="no-results">
+            <span class="no-results-kicker">Nenhum resultado</span>
             <strong>Nenhum produto encontrado</strong>
             <span>Tente outro termo ou altere os filtros selecionados.</span>
+            <button type="button" (click)="clearFilters()">Limpar filtros</button>
           </div>
         </ng-template>
       </ng-template>

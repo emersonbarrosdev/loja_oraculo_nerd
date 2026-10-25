@@ -5,7 +5,7 @@
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--oraculo-border);
-  border-radius: 9px;
+  border-radius: 10px;
   background: var(--oraculo-surface-raised);
   box-shadow: none;
   transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
@@ -13,9 +13,8 @@
 
 .product-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(162, 123, 255, 0.44);
+  border-color: #51475b;
   background: #19151e;
-  box-shadow: none;
 }
 
 .product-image-wrap {
@@ -23,7 +22,9 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: #121016;
+  background:
+    radial-gradient(circle at 78% 10%, rgba(162, 123, 255, 0.07), transparent 42%),
+    #121016;
   border-bottom: 1px solid var(--oraculo-border);
   overflow: hidden;
 }
@@ -36,20 +37,20 @@
 }
 
 .product-card:hover .product-image-wrap img {
-  transform: scale(1.025);
+  transform: scale(1.018);
 }
 
 .product-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 17px 17px 16px;
+  padding: 18px 18px 17px;
 }
 
 mat-card-title {
   min-height: 45px;
   margin: 0;
-  color: var(--oraculo-ink);
+  color: #f3eef6;
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.5;
@@ -62,11 +63,11 @@ mat-card-content {
 }
 
 mat-card-content p {
-  margin: 9px 0 18px;
-  color: var(--oraculo-muted);
+  margin: 10px 0 19px;
+  color: #aaa2b2;
   font-size: 0.78rem;
   font-weight: 400;
-  line-height: 1.62;
+  line-height: 1.65;
 }
 
 mat-card-actions {
@@ -76,28 +77,36 @@ mat-card-actions {
   margin-top: auto;
 }
 
-.buy-link {
+.buy-button {
   width: 100%;
-  text-decoration: none;
-}
-
-.buy-button.mat-mdc-raised-button {
-  width: 100%;
-  min-height: 40px;
-  border: 1px solid var(--oraculo-primary);
-  border-radius: 6px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 13px;
+  border: 1px solid #594b66;
+  border-radius: 7px;
   background: transparent;
-  color: #bba4ff;
+  color: #d1c2ff;
   font-size: 0.8rem;
   font-weight: 600;
-  box-shadow: none;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  text-decoration: none;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
 }
 
-.buy-button.mat-mdc-raised-button:hover {
+.buy-button:hover {
   border-color: var(--oraculo-primary);
-  background: var(--oraculo-primary-dark);
+  background: rgba(162, 123, 255, 0.1);
   color: #fff;
+}
+
+.buy-button span:last-child {
+  font-size: 0.95rem;
+  transition: transform 0.18s ease;
+}
+
+.buy-button:hover span:last-child {
+  transform: translate(2px, -2px);
 }
 
 @media (max-width: 560px) {

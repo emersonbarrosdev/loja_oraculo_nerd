@@ -1,6 +1,11 @@
 <mat-card class="product-card">
   <div class="product-image-wrap">
-    <img mat-card-image [src]="project?.image" [alt]="project?.title || 'Produto Oráculo Nerd'" loading="lazy" />
+    <img
+      mat-card-image
+      [src]="project?.image"
+      [alt]="project?.title || 'Produto Oráculo Nerd'"
+      loading="lazy"
+    />
   </div>
 
   <div class="product-info">
@@ -21,8 +26,15 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <a class="buy-link" [href]="project?.link" target="_blank" rel="noopener noreferrer">
-        <button mat-raised-button class="buy-button">Ver produto</button>
+      <a
+        class="buy-button"
+        [href]="project?.link"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="'Ver produto ' + project?.title + ' em uma nova aba'"
+      >
+        <span>Ver produto</span>
+        <span aria-hidden="true">↗</span>
       </a>
     </mat-card-actions>
   </div>
